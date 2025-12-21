@@ -1,0 +1,639 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Bodrum Escape tour details by YFS TURIZM. Itinerary, inclusions, and FAQs." />
+  <title>Bodrum Escape | YFS TURIZM</title>
+  <style>
+/* YFS TURIZM — single-file (inline) stylesheet */
+:root{
+  --bg:#07090f; --panel:rgba(10,16,30,.62); --panel2:rgba(10,16,30,.48);
+  --text:#e9eefc; --muted:#a9b3cf; --line:rgba(255,255,255,.12);
+  --shadow:0 18px 60px rgba(0,0,0,.45);
+  --r:18px; --r2:26px; --max:1180px;
+  --grad:linear-gradient(135deg, rgba(120,150,255,.95), rgba(255,160,90,.92));
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  background:
+    radial-gradient(1200px 800px at 20% -10%, rgba(90,120,255,.20), transparent 55%),
+    radial-gradient(900px 700px at 90% 20%, rgba(255,165,90,.14), transparent 50%),
+    var(--bg);
+  color:var(--text);
+  line-height:1.5;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{width:min(var(--max), calc(100% - 40px)); margin:0 auto}
+.muted{color:var(--muted)}
+.mini{font-size:.92rem}
+.eyebrow{letter-spacing:.16em;text-transform:uppercase;font-size:.78rem;color:rgba(233,238,252,.75);margin-bottom:6px}
+.h2{margin:0 0 6px;font-size:clamp(1.55rem,2.2vw,2.1rem)}
+.h3{margin:0 0 8px;font-size:1.15rem}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:12px 16px;border-radius:14px;border:1px solid var(--line);
+  background:transparent;color:var(--text);cursor:pointer;
+  transition:transform .18s ease, border-color .18s ease, background .18s ease;
+  user-select:none;white-space:nowrap;
+}
+.btn:hover{transform:translateY(-1px);border-color:rgba(255,255,255,.18)}
+.btn--solid{background:var(--grad);border-color:transparent;color:#0a0f1b;font-weight:800}
+.btn--ghost{background:rgba(255,255,255,.03)}
+
+.topbar{
+  position:sticky;top:0;z-index:50;
+  border-bottom:1px solid var(--line);
+  background:rgba(7,9,15,.60);
+  backdrop-filter:blur(12px);
+}
+.topbar__row{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:14px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand__mark{width:38px;height:38px;border-radius:14px;background:var(--grad)}
+.brand__name{font-weight:900;letter-spacing:.08em}
+.brand__tag{display:block;font-size:.85rem;color:var(--muted)}
+.nav{display:flex;align-items:center;gap:14px}
+.nav a{color:rgba(233,238,252,.9)}
+.nav a:hover{color:#fff}
+.navToggle{display:none;background:transparent;border:1px solid var(--line);border-radius:12px;padding:10px;cursor:pointer}
+.navToggle span{display:block;width:22px;height:2px;background:rgba(233,238,252,.85);margin:4px 0}
+.navMobile{padding:12px 0 16px;border-top:1px solid var(--line)}
+.navMobile a{display:block;padding:10px 0;color:rgba(233,238,252,.92)}
+.navMobile .btn{width:100%;margin-top:8px}
+
+.hero{position:relative;min-height:86vh;display:flex;align-items:stretch}
+.hero--short{min-height:64vh}
+.hero__video, .hero__img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  filter:saturate(1.05) contrast(1.02);
+}
+.hero__shade{position:absolute;inset:0;background:linear-gradient(180deg, rgba(7,9,15,.35), rgba(7,9,15,.92))}
+.hero__content{position:relative;padding:92px 0 38px}
+.hero__kicker{color:rgba(233,238,252,.88);letter-spacing:.12em;text-transform:uppercase;font-size:.82rem}
+.hero__title{margin:10px 0 10px;font-size:clamp(2.0rem,4vw,3.4rem);line-height:1.1}
+.hero__lead{max-width:70ch;color:rgba(233,238,252,.86);font-size:1.05rem}
+.hero__ctas{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0 20px}
+
+.trust{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:18px 0}
+.trust__item{background:rgba(10,16,30,.55);border:1px solid var(--line);border-radius:16px;padding:12px;backdrop-filter:blur(10px)}
+.trust__label{font-size:.78rem;color:var(--muted);letter-spacing:.12em;text-transform:uppercase}
+.trust__value{font-weight:800;margin-top:4px}
+
+.section{padding:70px 0}
+.section--alt{background:linear-gradient(180deg, transparent, rgba(255,255,255,.02), transparent)}
+.section__head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:22px}
+
+.grid{display:grid;gap:16px}
+.tours{grid-template-columns:repeat(3,minmax(0,1fr))}
+.card{
+  background:rgba(10,16,30,.58);
+  border:1px solid var(--line);
+  border-radius:var(--r2);
+  overflow:hidden;
+  box-shadow:0 14px 50px rgba(0,0,0,.22);
+  backdrop-filter:blur(10px);
+}
+.card__media{position:relative;display:block}
+.card__media img{width:100%;height:210px;object-fit:cover}
+.badge{
+  position:absolute;top:14px;left:14px;
+  background:rgba(7,9,15,.55);
+  border:1px solid var(--line);
+  padding:6px 10px;border-radius:999px;font-size:.82rem;
+  backdrop-filter:blur(10px);
+}
+.card__body{padding:16px}
+.card__titleRow{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.rating{font-weight:900;color:rgba(255,220,140,.95)}
+.meta{display:flex;gap:10px;flex-wrap:wrap;color:rgba(233,238,252,.72);font-size:.92rem;margin:10px 0 12px}
+.meta span{border:1px solid var(--line);padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.02)}
+.card__actions{display:flex;gap:10px;flex-wrap:wrap}
+
+.callout{
+  margin-top:18px;display:flex;align-items:center;justify-content:space-between;gap:14px;
+  padding:16px;border-radius:var(--r2);border:1px solid var(--line);
+  background:linear-gradient(135deg, rgba(120,150,255,.10), rgba(255,160,90,.08));
+}
+
+.features{grid-template-columns:repeat(3,minmax(0,1fr))}
+.feature{background:rgba(10,16,30,.50);border:1px solid var(--line);border-radius:var(--r2);padding:18px}
+
+.qa{display:grid;grid-template-columns:320px 1fr;gap:18px}
+.qa__questions{
+  position:sticky;top:92px;height:max-content;
+  background:rgba(10,16,30,.52);border:1px solid var(--line);border-radius:var(--r2);
+  padding:14px;
+}
+.qa__hint{color:var(--muted);font-size:.9rem;margin-bottom:10px}
+.qa__q{display:block;padding:12px;border-radius:14px;border:1px solid transparent;color:rgba(233,238,252,.92)}
+.qa__q:hover{background:rgba(255,255,255,.03)}
+.qa__q.is-active{background:rgba(120,150,255,.14);border-color:rgba(120,150,255,.28)}
+
+.answer{padding:16px;border-radius:var(--r2);border:1px solid var(--line);background:rgba(10,16,30,.50);margin-bottom:14px}
+.answer__media{margin-top:12px;border-radius:18px;overflow:hidden;border:1px solid var(--line)}
+.answer__media img{height:280px;width:100%;object-fit:cover}
+
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .45s ease, transform .45s ease}
+.reveal.is-in{opacity:1;transform:translateY(0)}
+
+.mosaic{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.mosaic img{border-radius:18px;border:1px solid var(--line);height:220px;object-fit:cover}
+
+.contact{grid-template-columns:1fr 1.2fr}
+.pad{padding:18px}
+.form__grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field span{font-size:.85rem;color:rgba(233,238,252,.75)}
+.field input,.field select,.field textarea{
+  background:rgba(255,255,255,.04);
+  border:1px solid var(--line);
+  border-radius:14px;padding:11px 12px;color:var(--text);outline:none
+}
+.field input::placeholder,.field textarea::placeholder{color:rgba(169,179,207,.65)}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:rgba(255,255,255,.22)}
+.field--full{grid-column:1 / -1}
+
+.footer{border-top:1px solid var(--line);background:rgba(7,9,15,.65);padding:26px 0}
+.footer__grid{display:grid;grid-template-columns:1.2fr .6fr .6fr;gap:16px;align-items:start}
+.footer__brand{font-weight:900;letter-spacing:.08em;margin-bottom:6px}
+.footer__links a{display:block;padding:6px 0;color:rgba(233,238,252,.86)}
+.footer__links a:hover{color:#fff}
+.footer__bottom{padding-top:14px}
+
+.waFloat{
+  position:fixed;right:18px;bottom:18px;z-index:60;
+  padding:12px 14px;border-radius:999px;
+  background:rgba(10,16,30,.72);border:1px solid var(--line);
+  box-shadow:var(--shadow);backdrop-filter:blur(10px);
+  display:flex;align-items:center;gap:10px;
+}
+.waDot{width:10px;height:10px;border-radius:50%;background:rgba(120,255,180,.95)}
+
+.loader{
+  position:fixed;inset:0;z-index:9999;
+  background:
+    radial-gradient(900px 600px at 20% 10%, rgba(120,150,255,.18), transparent 60%),
+    radial-gradient(900px 600px at 90% 20%, rgba(255,160,90,.10), transparent 60%),
+    rgba(5,7,12,.92);
+  display:flex;align-items:center;justify-content:center;
+}
+.loader__card{
+  width:min(520px, calc(100% - 34px));
+  background:rgba(10,16,30,.75);border:1px solid var(--line);border-radius:22px;
+  box-shadow:var(--shadow);padding:22px;backdrop-filter:blur(10px);
+}
+.loader__brand{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.logoMark{width:42px;height:42px;border-radius:14px;background:var(--grad)}
+.loader__title{font-weight:900;letter-spacing:.06em}
+.loader__sub{color:var(--muted);font-size:.95rem}
+.loader__bar{height:12px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid var(--line);overflow:hidden}
+.loader__barFill{height:100%;width:0%;background:var(--grad)}
+.loader__meta{display:flex;justify-content:space-between;gap:12px;margin-top:12px;color:var(--muted);font-size:.95rem}
+.loader.is-hidden{opacity:0;pointer-events:none;transition:opacity .35s ease}
+
+@media (max-width: 980px){
+  .tours{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .features{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .trust{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .qa{grid-template-columns:1fr}
+  .qa__questions{position:relative;top:0}
+  .mosaic{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .contact{grid-template-columns:1fr}
+  .nav{display:none}
+  .navToggle{display:inline-block}
+}
+@media (max-width: 520px){
+  .tours{grid-template-columns:1fr}
+  .features{grid-template-columns:1fr}
+  .mosaic{grid-template-columns:1fr}
+  .form__grid{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .reveal{transition:none}
+  .btn{transition:none}
+}
+</style>
+  <script defer>
+(() => {
+  const $ = (s, p=document) => p.querySelector(s);
+  const $$ = (s, p=document) => [...p.querySelectorAll(s)];
+
+  // year
+  const y = $('[data-year]');
+  if (y) y.textContent = String(new Date().getFullYear());
+
+  // mobile nav
+  const toggle = $('[data-nav-toggle]');
+  const mobile = $('[data-nav-mobile]');
+  if (toggle && mobile) {
+    toggle.addEventListener('click', () => {
+      const isHidden = mobile.hasAttribute('hidden');
+      if (isHidden) mobile.removeAttribute('hidden');
+      else mobile.setAttribute('hidden','');
+    });
+    $$('a', mobile).forEach(a => a.addEventListener('click', () => mobile.setAttribute('hidden','')));
+  }
+
+  // fake loader (only if present)
+  const loader = $('#loader');
+  const fill = $('#loaderFill');
+  const pct = $('#loaderPct');
+  const bar = loader?.querySelector('[role="progressbar"]');
+  const runLoader = () => {
+    if (!loader || !fill || !pct) return;
+    let p = 0;
+    const tick = () => {
+      p += Math.max(1, Math.round(6 - p/22));
+      if (p > 100) p = 100;
+      fill.style.width = p + '%';
+      pct.textContent = p + '%';
+      if (bar) bar.setAttribute('aria-valuenow', String(p));
+      if (p < 100) requestAnimationFrame(tick);
+      else {
+        setTimeout(() => {
+          loader.classList.add('is-hidden');
+          setTimeout(() => loader.remove(), 420);
+        }, 250);
+      }
+    };
+    requestAnimationFrame(tick);
+  };
+  window.addEventListener('load', runLoader, { once:true });
+
+  // reveal on scroll
+  const reveals = $$('.reveal');
+  if ('IntersectionObserver' in window && reveals.length) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(ent => { if (ent.isIntersecting) ent.target.classList.add('is-in'); });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => io.observe(el));
+  } else {
+    reveals.forEach(el => el.classList.add('is-in'));
+  }
+
+  // Q&A highlight (index)
+  const qLinks = $$('.qa__q');
+  const answers = $$('.answer[id]');
+  if ('IntersectionObserver' in window && qLinks.length && answers.length) {
+    const setActive = (id) => qLinks.forEach(a => a.classList.toggle('is-active', a.dataset.q === id));
+    const io = new IntersectionObserver((entries) => {
+      const visible = entries.filter(e => e.isIntersecting).sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (visible?.target?.id) setActive(visible.target.id);
+    }, { threshold: [0.2, 0.35, 0.5] });
+    answers.forEach(a => io.observe(a));
+  }
+
+  // simple toast
+  $$('[data-toast]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const msg = btn.getAttribute('data-toast') || 'Done';
+      const t = document.createElement('div');
+      t.style.position = 'fixed';
+      t.style.left = '50%';
+      t.style.bottom = '86px';
+      t.style.transform = 'translateX(-50%)';
+      t.style.padding = '12px 14px';
+      t.style.borderRadius = '14px';
+      t.style.background = 'rgba(10,16,30,.86)';
+      t.style.border = '1px solid rgba(255,255,255,.12)';
+      t.style.backdropFilter = 'blur(10px)';
+      t.style.boxShadow = '0 18px 60px rgba(0,0,0,.45)';
+      t.style.zIndex = '60';
+      t.textContent = msg;
+      document.body.appendChild(t);
+      setTimeout(() => t.remove(), 2200);
+    });
+  });
+
+  // Tour filter chips (index)
+  const chips = $$('.chip');
+  const cards = $$('.tour[data-tags]');
+  const applyFilter = (tag) => {
+    cards.forEach(c => {
+      const tags = (c.getAttribute('data-tags') || '').split(/\s+/).filter(Boolean);
+      c.style.display = (tag === 'all' || tags.includes(tag)) ? '' : 'none';
+    });
+  };
+  chips.forEach(ch => ch.addEventListener('click', () => {
+    chips.forEach(x => x.classList.remove('is-active'));
+    ch.classList.add('is-active');
+    applyFilter(ch.dataset.filter || 'all');
+  }));
+})();
+</script>
+</head>
+
+<body>
+  <a class="waFloat" href="https://wa.me/905324275014?text=Hi%20YFS%20TURIZM!%20I%20want%20to%20book%20a%20tour." target="_blank" rel="noopener">
+    <span class="waDot" aria-hidden="true"></span> WhatsApp
+  </a>
+
+  <header class="topbar">
+    <div class="container topbar__row">
+      <a class="brand" href="index.html#tours" aria-label="Back to tours">
+        <img src="yfsimage.png" alt="YFS TURIZM Logo" width="40" height="40">
+        <span class="brand__text">
+          <span class="brand__name">YFS TURIZM</span>
+          <span class="brand__tag">Tour Details</span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Tour navigation">
+        <a href="index.html#tours">All tours</a>
+        <a href="#itinerary">Itinerary</a>
+        <a href="#included">Inclusions</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn btn--solid" href="https://wa.me/905324275014?text=Hi%20YFS%20TURIZM!%20I%20want%20to%20book%20a%20tour." target="_blank" rel="noopener">Check availability</a>
+      </nav>
+
+      <button class="navToggle" data-nav-toggle aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+
+    <div class="navMobile" data-nav-mobile hidden>
+      <a href="index.html#tours">All tours</a>
+      <a href="#itinerary">Itinerary</a>
+      <a href="#included">Inclusions</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn btn--solid" href="https://wa.me/905324275014?text=Hi%20YFS%20TURIZM!%20I%20want%20to%20book%20a%20tour." target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero hero--short">
+      <img class="hero__img" alt="Bodrum Escape" src="https://images.unsplash.com/photo-1583062482795-d2bef78e9bc1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Ym9kcnVtfGVufDB8fDB8fHww" />
+      <div class="hero__shade" aria-hidden="true"></div>
+      <div class="container hero__content">
+        <div class="hero__kicker">Bodrum</div>
+        <h1 class="hero__title">Bodrum Escape</h1>
+        <p class="hero__lead">Marina vibes, calm beaches, and premium upgrades like private boat and sunset options.</p>
+        <div class="hero__ctas">
+          <a class="btn btn--solid" href="#itinerary">See itinerary</a>
+          <a class="btn btn--ghost" href="index.html#contact">Ask on WhatsApp</a>
+        </div>
+        <div class="trust">
+          <div class="trust__item"><div class="trust__label">Duration</div><div class="trust__value">Day / 2 Days</div></div>
+          <div class="trust__item"><div class="trust__label">Style</div><div class="trust__value">Small group / Private</div></div>
+          <div class="trust__item"><div class="trust__label">Language</div><div class="trust__value">English</div></div>
+          <div class="trust__item"><div class="trust__label">Options</div><div class="trust__value">Private boat • Sunset • VIP</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="itinerary" class="section">
+      <div class="container">
+        <div class="section__head">
+          <div>
+           <section id="itinerary" class="section">
+  <div class="container">
+
+    <div class="section__head">
+      <div>
+        <div class="eyebrow">Itinerary</div>
+        <h2 class="h2">Bodrum Coast, History & Mediterranean Lifestyle – Full Day Tour</h2>
+        <p class="muted">
+          A refined full-day experience combining Bodrum’s ancient heritage,
+          coastal beauty, and relaxed Mediterranean lifestyle, carefully designed
+          and operated by YFS Turizm.
+        </p>
+      </div>
+    </div>
+
+    <div>
+
+      <h3>Morning – Hotel Pick-Up & Coastal Introduction</h3>
+      <p>
+        The tour begins with a scheduled pick-up from your hotel in Bodrum in a comfortable,
+        air-conditioned vehicle. From the first moment, YFS Turizm ensures a smooth,
+        punctual, and relaxed start to the day.
+      </p>
+
+      <p>
+        During the drive, your professional licensed guide introduces Bodrum’s history,
+        explaining its transformation from the ancient city of Halicarnassus
+        into one of Türkiye’s most elegant coastal destinations.
+      </p>
+
+      <h3>Bodrum Castle – History Over the Sea</h3>
+      <p>
+        The first major visit is Bodrum Castle, an impressive medieval fortress built
+        by the Knights of St. John in the 15th century.
+        Overlooking the harbor, the castle offers panoramic views of the Aegean Sea
+        and the surrounding coastline.
+      </p>
+
+      <p>
+        Guests explore the castle grounds while learning about its strategic importance,
+        architectural features, and role throughout different historical periods.
+      </p>
+
+      <h3>Museum of Underwater Archaeology</h3>
+      <p>
+        Located within Bodrum Castle, the Museum of Underwater Archaeology is one of
+        the most important museums of its kind in the world.
+        It showcases shipwrecks, ancient cargo, and artifacts recovered from the Aegean Sea.
+      </p>
+
+      <p>
+        The guided visit provides insight into ancient maritime trade,
+        seafaring technology, and Bodrum’s long relationship with the sea.
+      </p>
+
+      <h3>Halicarnassus & Mausoleum Site</h3>
+      <p>
+        The tour continues to the site of the Mausoleum at Halicarnassus,
+        one of the Seven Wonders of the Ancient World.
+        Although only remains are visible today, the guide explains the scale,
+        design, and historical significance of this monumental tomb.
+      </p>
+
+      <p>
+        This stop completes the historical narrative of Bodrum as a major center
+        of ancient civilization.
+      </p>
+
+      <h3>Midday – Lunch Break by the Coast</h3>
+      <p>
+        A lunch break is arranged at a selected local restaurant near the sea.
+        Guests may enjoy fresh Aegean flavors and take time to relax
+        in Bodrum’s laid-back coastal atmosphere.
+        Lunch is optional and flexible according to preferences.
+      </p>
+
+      <h3>Bodrum Old Town – Streets, Marina & Local Life</h3>
+      <p>
+        After lunch, the tour continues through Bodrum Old Town.
+        Guests walk through narrow streets lined with whitewashed houses,
+        boutiques, cafés, and artisan shops.
+      </p>
+
+      <p>
+        The walk includes views of Bodrum Marina, where traditional gulets
+        and modern yachts reflect the town’s blend of heritage and luxury.
+        Free time is provided for exploration and photography.
+      </p>
+
+      <h3>Coastal Viewpoints & Leisure Time</h3>
+      <p>
+        The afternoon includes relaxed stops at scenic viewpoints overlooking
+        the Aegean Sea. These moments allow guests to appreciate Bodrum’s
+        natural beauty and calm coastal rhythm.
+      </p>
+
+      <p>
+        Depending on timing and guest preference, short leisure time
+        may be provided near the waterfront.
+      </p>
+
+      <h3>Late Afternoon – Return to Hotel</h3>
+      <p>
+        After a full day combining history, culture, and coastal lifestyle,
+        guests are transferred back to their hotel in comfort.
+        The tour concludes with the service quality, organization,
+        and reliability of YFS Turizm.
+      </p>
+
+      <p>
+        This itinerary is designed for travelers who appreciate historical depth,
+        scenic coastal settings, and a refined Mediterranean travel experience.
+      </p>
+
+      <!-- IMAGE PLACEHOLDERS -->
+      <div>
+        <img src="https://images.unsplash.com/photo-1684858504602-677ac40eadfd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Ym9kcnVtfGVufDB8fDB8fHww" alt="Bodrum Castle">
+        <img src="https://images.unsplash.com/photo-1583061386694-e364c84ba31d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGJvZHJ1bXxlbnwwfHwwfHx8MA%3D%3D" alt="Museum of Underwater Archaeology">
+        <img src="https://images.unsplash.com/photo-1726255988977-06023f676792?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGJvZHJ1bXxlbnwwfHwwfHx8MA%3D%3D" alt="">
+        
+     
+      </div>
+
+    </div>
+
+  </div>
+
+
+    <section id="included" class="section section--alt">
+      <div class="container">
+        <div class="section__head">
+          <div><div class="eyebrow">Clarity</div><h2 class="h2">Inclusions & exclusions</h2></div>
+        </div>
+        <div class="grid features">
+          <article class="feature"><h3 class="h3">Included</h3><p class="muted">Routing, planning, guiding (package dependent), support on WhatsApp.</p></article>
+          <article class="feature"><h3 class="h3">Optional</h3><p class="muted">Private guide, upgraded vehicle, add-on experiences.</p></article>
+          <article class="feature"><h3 class="h3">Not included</h3><p class="muted">Personal expenses, tips, some tickets/fees (depending on package).</p></article>
+        </div>
+      </div>
+    </section>
+
+   <!-- BODRUM FAQ -->
+<section class="section section--alt">
+  <div class="container">
+
+    <div class="section__head">
+      <div>
+        <div class="eyebrow">Frequently asked</div>
+        <h2 class="h2">Bodrum Tour – Frequently Asked Questions</h2>
+        <p class="muted">
+          Useful information to help you plan your Bodrum experience with confidence.
+        </p>
+      </div>
+    </div>
+
+    <div>
+
+      <h3>Is Bodrum more about history or the sea?</h3>
+      <p>
+        Bodrum offers a balanced combination of both.
+        The tour includes important historical sites such as Bodrum Castle and the Mausoleum
+        while also highlighting coastal scenery and Mediterranean lifestyle.
+      </p>
+
+      <h3>Does the tour include a boat or yacht cruise?</h3>
+      <p>
+        Boat and yacht tours are not included in the standard Bodrum city tour.
+        Private boat or gulet experiences can be arranged upon request as an optional upgrade.
+      </p>
+
+      <h3>How much walking is involved?</h3>
+      <p>
+        The Bodrum tour involves light to moderate walking.
+        Most areas are flat and the pace is relaxed, making it suitable for a wide range of guests.
+      </p>
+
+      <h3>Is the tour suitable for families and older guests?</h3>
+      <p>
+        Yes. The Bodrum tour is suitable for families and senior travelers.
+        Castle visits may include stairs, but alternative pacing options are available.
+      </p>
+
+      <h3>What should I wear during the tour?</h3>
+      <p>
+        Comfortable walking shoes are recommended.
+        In summer months, light clothing, sun protection, and a hat are advised.
+      </p>
+
+      <h3>Are entrance fees included?</h3>
+      <p>
+        Entrance fees may or may not be included depending on the selected package.
+        All inclusions are clearly stated before confirmation.
+      </p>
+
+      <h3>Do you offer private Bodrum tours?</h3>
+      <p>
+        Yes. Private and premium Bodrum tours are available
+        for travelers who prefer a personalized route and flexible timing.
+      </p>
+
+      <h3>Can Bodrum be combined with other destinations?</h3>
+      <p>
+        Yes. Bodrum can be combined with destinations such as Pamukkale,
+        Ephesus, or coastal routes as part of a multi-day itinerary.
+      </p>
+
+      <h3>How do I make a reservation?</h3>
+      <p>
+        Reservations can be made easily via WhatsApp or direct contact.
+        Our team responds quickly with availability and clear options.
+      </p>
+
+    </div>
+
+  </div>
+</section>
+
+
+        <div class="callout">
+          <div>
+            <h3 class="h3">Want exact price & availability?</h3>
+            <p class="muted">Send dates + hotel area. We reply with clear options.</p>
+          </div>
+          <a class="btn btn--solid" href="https://wa.me/905324275014?text=Hi%20YFS%20TURIZM!%20I%20want%20to%20book%20a%20tour." target="_blank" rel="noopener">WhatsApp now</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <div class="footer__brand">YFS TURIZM</div>
+        <div class="muted mini">We do not currently have a TURSAB license. </div>
+      </div>
+      <div class="footer__links">
+        <a href="index.html#tours">Tours</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <div class="footer__links">
+        <a href="https://wa.me/905324275014?text=Hi%20YFS%20TURIZM!%20I%20want%20to%20book%20a%20tour." target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+    <div class="container footer__bottom muted mini">© <span data-year></span> YFS TURIZM.</div>
+  </footer>
+</body>
+</html>

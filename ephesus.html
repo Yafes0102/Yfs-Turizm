@@ -1,0 +1,688 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Ephesus & Ancient Wonders tour details by YFS TURIZM. Itinerary, inclusions, and FAQs." />
+  <title>Ephesus & Ancient Wonders | YFS TURIZM</title>
+  <style>
+/* YFS TURIZM — single-file (inline) stylesheet */
+:root{
+  --bg:#07090f; --panel:rgba(10,16,30,.62); --panel2:rgba(10,16,30,.48);
+  --text:#e9eefc; --muted:#a9b3cf; --line:rgba(255,255,255,.12);
+  --shadow:0 18px 60px rgba(0,0,0,.45);
+  --r:18px; --r2:26px; --max:1180px;
+  --grad:linear-gradient(135deg, rgba(120,150,255,.95), rgba(255,160,90,.92));
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  background:
+    radial-gradient(1200px 800px at 20% -10%, rgba(90,120,255,.20), transparent 55%),
+    radial-gradient(900px 700px at 90% 20%, rgba(255,165,90,.14), transparent 50%),
+    var(--bg);
+  color:var(--text);
+  line-height:1.5;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{width:min(var(--max), calc(100% - 40px)); margin:0 auto}
+.muted{color:var(--muted)}
+.mini{font-size:.92rem}
+.eyebrow{letter-spacing:.16em;text-transform:uppercase;font-size:.78rem;color:rgba(233,238,252,.75);margin-bottom:6px}
+.h2{margin:0 0 6px;font-size:clamp(1.55rem,2.2vw,2.1rem)}
+.h3{margin:0 0 8px;font-size:1.15rem}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:12px 16px;border-radius:14px;border:1px solid var(--line);
+  background:transparent;color:var(--text);cursor:pointer;
+  transition:transform .18s ease, border-color .18s ease, background .18s ease;
+  user-select:none;white-space:nowrap;
+}
+.btn:hover{transform:translateY(-1px);border-color:rgba(255,255,255,.18)}
+.btn--solid{background:var(--grad);border-color:transparent;color:#0a0f1b;font-weight:800}
+.btn--ghost{background:rgba(255,255,255,.03)}
+
+.topbar{
+  position:sticky;top:0;z-index:50;
+  border-bottom:1px solid var(--line);
+  background:rgba(7,9,15,.60);
+  backdrop-filter:blur(12px);
+}
+.topbar__row{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:14px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand__mark{width:38px;height:38px;border-radius:14px;background:var(--grad)}
+.brand__name{font-weight:900;letter-spacing:.08em}
+.brand__tag{display:block;font-size:.85rem;color:var(--muted)}
+.nav{display:flex;align-items:center;gap:14px}
+.nav a{color:rgba(233,238,252,.9)}
+.nav a:hover{color:#fff}
+.navToggle{display:none;background:transparent;border:1px solid var(--line);border-radius:12px;padding:10px;cursor:pointer}
+.navToggle span{display:block;width:22px;height:2px;background:rgba(233,238,252,.85);margin:4px 0}
+.navMobile{padding:12px 0 16px;border-top:1px solid var(--line)}
+.navMobile a{display:block;padding:10px 0;color:rgba(233,238,252,.92)}
+.navMobile .btn{width:100%;margin-top:8px}
+
+.hero{position:relative;min-height:86vh;display:flex;align-items:stretch}
+.hero--short{min-height:64vh}
+.hero__video, .hero__img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  filter:saturate(1.05) contrast(1.02);
+}
+.hero__shade{position:absolute;inset:0;background:linear-gradient(180deg, rgba(7,9,15,.35), rgba(7,9,15,.92))}
+.hero__content{position:relative;padding:92px 0 38px}
+.hero__kicker{color:rgba(233,238,252,.88);letter-spacing:.12em;text-transform:uppercase;font-size:.82rem}
+.hero__title{margin:10px 0 10px;font-size:clamp(2.0rem,4vw,3.4rem);line-height:1.1}
+.hero__lead{max-width:70ch;color:rgba(233,238,252,.86);font-size:1.05rem}
+.hero__ctas{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0 20px}
+
+.trust{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:18px 0}
+.trust__item{background:rgba(10,16,30,.55);border:1px solid var(--line);border-radius:16px;padding:12px;backdrop-filter:blur(10px)}
+.trust__label{font-size:.78rem;color:var(--muted);letter-spacing:.12em;text-transform:uppercase}
+.trust__value{font-weight:800;margin-top:4px}
+
+.section{padding:70px 0}
+.section--alt{background:linear-gradient(180deg, transparent, rgba(255,255,255,.02), transparent)}
+.section__head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:22px}
+
+.grid{display:grid;gap:16px}
+.tours{grid-template-columns:repeat(3,minmax(0,1fr))}
+.card{
+  background:rgba(10,16,30,.58);
+  border:1px solid var(--line);
+  border-radius:var(--r2);
+  overflow:hidden;
+  box-shadow:0 14px 50px rgba(0,0,0,.22);
+  backdrop-filter:blur(10px);
+}
+.card__media{position:relative;display:block}
+.card__media img{width:100%;height:210px;object-fit:cover}
+.badge{
+  position:absolute;top:14px;left:14px;
+  background:rgba(7,9,15,.55);
+  border:1px solid var(--line);
+  padding:6px 10px;border-radius:999px;font-size:.82rem;
+  backdrop-filter:blur(10px);
+}
+.card__body{padding:16px}
+.card__titleRow{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.rating{font-weight:900;color:rgba(255,220,140,.95)}
+.meta{display:flex;gap:10px;flex-wrap:wrap;color:rgba(233,238,252,.72);font-size:.92rem;margin:10px 0 12px}
+.meta span{border:1px solid var(--line);padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.02)}
+.card__actions{display:flex;gap:10px;flex-wrap:wrap}
+
+.callout{
+  margin-top:18px;display:flex;align-items:center;justify-content:space-between;gap:14px;
+  padding:16px;border-radius:var(--r2);border:1px solid var(--line);
+  background:linear-gradient(135deg, rgba(120,150,255,.10), rgba(255,160,90,.08));
+}
+
+.features{grid-template-columns:repeat(3,minmax(0,1fr))}
+.feature{background:rgba(10,16,30,.50);border:1px solid var(--line);border-radius:var(--r2);padding:18px}
+
+.qa{display:grid;grid-template-columns:320px 1fr;gap:18px}
+.qa__questions{
+  position:sticky;top:92px;height:max-content;
+  background:rgba(10,16,30,.52);border:1px solid var(--line);border-radius:var(--r2);
+  padding:14px;
+}
+.qa__hint{color:var(--muted);font-size:.9rem;margin-bottom:10px}
+.qa__q{display:block;padding:12px;border-radius:14px;border:1px solid transparent;color:rgba(233,238,252,.92)}
+.qa__q:hover{background:rgba(255,255,255,.03)}
+.qa__q.is-active{background:rgba(120,150,255,.14);border-color:rgba(120,150,255,.28)}
+
+.answer{padding:16px;border-radius:var(--r2);border:1px solid var(--line);background:rgba(10,16,30,.50);margin-bottom:14px}
+.answer__media{margin-top:12px;border-radius:18px;overflow:hidden;border:1px solid var(--line)}
+.answer__media img{height:280px;width:100%;object-fit:cover}
+
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .45s ease, transform .45s ease}
+.reveal.is-in{opacity:1;transform:translateY(0)}
+
+.mosaic{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.mosaic img{border-radius:18px;border:1px solid var(--line);height:220px;object-fit:cover}
+
+.contact{grid-template-columns:1fr 1.2fr}
+.pad{padding:18px}
+.form__grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field span{font-size:.85rem;color:rgba(233,238,252,.75)}
+.field input,.field select,.field textarea{
+  background:rgba(255,255,255,.04);
+  border:1px solid var(--line);
+  border-radius:14px;padding:11px 12px;color:var(--text);outline:none
+}
+.field input::placeholder,.field textarea::placeholder{color:rgba(169,179,207,.65)}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:rgba(255,255,255,.22)}
+.field--full{grid-column:1 / -1}
+
+.footer{border-top:1px solid var(--line);background:rgba(7,9,15,.65);padding:26px 0}
+.footer__grid{display:grid;grid-template-columns:1.2fr .6fr .6fr;gap:16px;align-items:start}
+.footer__brand{font-weight:900;letter-spacing:.08em;margin-bottom:6px}
+.footer__links a{display:block;padding:6px 0;color:rgba(233,238,252,.86)}
+.footer__links a:hover{color:#fff}
+.footer__bottom{padding-top:14px}
+
+.waFloat{
+  position:fixed;right:18px;bottom:18px;z-index:60;
+  padding:12px 14px;border-radius:999px;
+  background:rgba(10,16,30,.72);border:1px solid var(--line);
+  box-shadow:var(--shadow);backdrop-filter:blur(10px);
+  display:flex;align-items:center;gap:10px;
+}
+.waDot{width:10px;height:10px;border-radius:50%;background:rgba(120,255,180,.95)}
+
+.loader{
+  position:fixed;inset:0;z-index:9999;
+  background:
+    radial-gradient(900px 600px at 20% 10%, rgba(120,150,255,.18), transparent 60%),
+    radial-gradient(900px 600px at 90% 20%, rgba(255,160,90,.10), transparent 60%),
+    rgba(5,7,12,.92);
+  display:flex;align-items:center;justify-content:center;
+}
+.loader__card{
+  width:min(520px, calc(100% - 34px));
+  background:rgba(10,16,30,.75);border:1px solid var(--line);border-radius:22px;
+  box-shadow:var(--shadow);padding:22px;backdrop-filter:blur(10px);
+}
+.loader__brand{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.logoMark{width:42px;height:42px;border-radius:14px;background:var(--grad)}
+.loader__title{font-weight:900;letter-spacing:.06em}
+.loader__sub{color:var(--muted);font-size:.95rem}
+.loader__bar{height:12px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid var(--line);overflow:hidden}
+.loader__barFill{height:100%;width:0%;background:var(--grad)}
+.loader__meta{display:flex;justify-content:space-between;gap:12px;margin-top:12px;color:var(--muted);font-size:.95rem}
+.loader.is-hidden{opacity:0;pointer-events:none;transition:opacity .35s ease}
+
+@media (max-width: 980px){
+  .tours{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .features{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .trust{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .qa{grid-template-columns:1fr}
+  .qa__questions{position:relative;top:0}
+  .mosaic{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .contact{grid-template-columns:1fr}
+  .nav{display:none}
+  .navToggle{display:inline-block}
+}
+@media (max-width: 520px){
+  .tours{grid-template-columns:1fr}
+  .features{grid-template-columns:1fr}
+  .mosaic{grid-template-columns:1fr}
+  .form__grid{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .reveal{transition:none}
+  .btn{transition:none}
+}
+</style>
+  <script defer>
+(() => {
+  const $ = (s, p=document) => p.querySelector(s);
+  const $$ = (s, p=document) => [...p.querySelectorAll(s)];
+
+  // year
+  const y = $('[data-year]');
+  if (y) y.textContent = String(new Date().getFullYear());
+
+  // mobile nav
+  const toggle = $('[data-nav-toggle]');
+  const mobile = $('[data-nav-mobile]');
+  if (toggle && mobile) {
+    toggle.addEventListener('click', () => {
+      const isHidden = mobile.hasAttribute('hidden');
+      if (isHidden) mobile.removeAttribute('hidden');
+      else mobile.setAttribute('hidden','');
+    });
+    $$('a', mobile).forEach(a => a.addEventListener('click', () => mobile.setAttribute('hidden','')));
+  }
+
+  // fake loader (only if present)
+  const loader = $('#loader');
+  const fill = $('#loaderFill');
+  const pct = $('#loaderPct');
+  const bar = loader?.querySelector('[role="progressbar"]');
+  const runLoader = () => {
+    if (!loader || !fill || !pct) return;
+    let p = 0;
+    const tick = () => {
+      p += Math.max(1, Math.round(6 - p/22));
+      if (p > 100) p = 100;
+      fill.style.width = p + '%';
+      pct.textContent = p + '%';
+      if (bar) bar.setAttribute('aria-valuenow', String(p));
+      if (p < 100) requestAnimationFrame(tick);
+      else {
+        setTimeout(() => {
+          loader.classList.add('is-hidden');
+          setTimeout(() => loader.remove(), 420);
+        }, 250);
+      }
+    };
+    requestAnimationFrame(tick);
+  };
+  window.addEventListener('load', runLoader, { once:true });
+
+  // reveal on scroll
+  const reveals = $$('.reveal');
+  if ('IntersectionObserver' in window && reveals.length) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(ent => { if (ent.isIntersecting) ent.target.classList.add('is-in'); });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => io.observe(el));
+  } else {
+    reveals.forEach(el => el.classList.add('is-in'));
+  }
+
+  // Q&A highlight (index)
+  const qLinks = $$('.qa__q');
+  const answers = $$('.answer[id]');
+  if ('IntersectionObserver' in window && qLinks.length && answers.length) {
+    const setActive = (id) => qLinks.forEach(a => a.classList.toggle('is-active', a.dataset.q === id));
+    const io = new IntersectionObserver((entries) => {
+      const visible = entries.filter(e => e.isIntersecting).sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (visible?.target?.id) setActive(visible.target.id);
+    }, { threshold: [0.2, 0.35, 0.5] });
+    answers.forEach(a => io.observe(a));
+  }
+
+  // simple toast
+  $$('[data-toast]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const msg = btn.getAttribute('data-toast') || 'Done';
+      const t = document.createElement('div');
+      t.style.position = 'fixed';
+      t.style.left = '50%';
+      t.style.bottom = '86px';
+      t.style.transform = 'translateX(-50%)';
+      t.style.padding = '12px 14px';
+      t.style.borderRadius = '14px';
+      t.style.background = 'rgba(10,16,30,.86)';
+      t.style.border = '1px solid rgba(255,255,255,.12)';
+      t.style.backdropFilter = 'blur(10px)';
+      t.style.boxShadow = '0 18px 60px rgba(0,0,0,.45)';
+      t.style.zIndex = '60';
+      t.textContent = msg;
+      document.body.appendChild(t);
+      setTimeout(() => t.remove(), 2200);
+    });
+  });
+
+  // Tour filter chips (index)
+  const chips = $$('.chip');
+  const cards = $$('.tour[data-tags]');
+  const applyFilter = (tag) => {
+    cards.forEach(c => {
+      const tags = (c.getAttribute('data-tags') || '').split(/\s+/).filter(Boolean);
+      c.style.display = (tag === 'all' || tags.includes(tag)) ? '' : 'none';
+    });
+  };
+  chips.forEach(ch => ch.addEventListener('click', () => {
+    chips.forEach(x => x.classList.remove('is-active'));
+    ch.classList.add('is-active');
+    applyFilter(ch.dataset.filter || 'all');
+  }));
+})();
+</script>
+</head>
+
+<body>
+  <a class="waFloat" href="https://wa.me/905324275014?text=Hi%20YFS%20TURIZM!%20I%20want%20to%20book%20a%20tour." target="_blank" rel="noopener">
+    <span class="waDot" aria-hidden="true"></span> WhatsApp
+  </a>
+
+  <header class="topbar">
+    <div class="container topbar__row">
+      <a class="brand" href="index.html#tours" aria-label="Back to tours">
+         <img src="yfsimage.png" alt="YFS TURIZM Logo" width="40" height="40">
+        <span class="brand__text">
+          <span class="brand__name">YFS TURIZM</span>
+          <span class="brand__tag">Tour Details</span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Tour navigation">
+        <a href="index.html#tours">All tours</a>
+        <a href="#itinerary">Itinerary</a>
+        <a href="#included">Inclusions</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn btn--solid" href="https://wa.me/905324275014?text=Hi%20YFS%20TURIZM!%20I%20want%20to%20book%20a%20tour." target="_blank" rel="noopener">Check availability</a>
+      </nav>
+
+      <button class="navToggle" data-nav-toggle aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+
+    <div class="navMobile" data-nav-mobile hidden>
+      <a href="index.html#tours">All tours</a>
+      <a href="#itinerary">Itinerary</a>
+      <a href="#included">Inclusions</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn btn--solid" href="https://wa.me/905324275014?text=Hi%20YFS%20TURIZM!%20I%20want%20to%20book%20a%20tour." target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero hero--short">
+      <img class="hero__img" alt="Ephesus & Ancient Wonders" src="https://images.unsplash.com/photo-1554484167-5047004cf225?q=80&w=771&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3Ds:" />
+      <div class="hero__shade" aria-hidden="true"></div>
+      <div class="container hero__content">
+        <div class="hero__kicker">Ephesus</div>
+        <h1 class="hero__title">Ephesus & Ancient Wonders</h1>
+        <p class="hero__lead">A well-paced guided walk through iconic ruins with clear, story-first explanations.</p>
+        <div class="hero__ctas">
+          <a class="btn btn--solid" href="#itinerary">See itinerary</a>
+          <a class="btn btn--ghost" href="index.html#contact">Ask on WhatsApp</a>
+        </div>
+        <div class="trust">
+          <div class="trust__item"><div class="trust__label">Duration</div><div class="trust__value">Full Day</div></div>
+          <div class="trust__item"><div class="trust__label">Style</div><div class="trust__value">Small group / Private</div></div>
+          <div class="trust__item"><div class="trust__label">Language</div><div class="trust__value">English</div></div>
+          <div class="trust__item"><div class="trust__label">Options</div><div class="trust__value">Private • Tickets bundle</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="itinerary" class="section">
+  <div class="container">
+
+    <div class="section__head">
+      <div>
+        <div class="eyebrow">Tour Plan</div>
+        <h2 class="h2">Ephesus & Ancient Wonders – Full Day Itinerary</h2>
+        <p class="muted">
+          A carefully designed cultural journey through one of the most important ancient cities of the world,
+          operated with the experience and reliability of YFS Turizm.
+        </p>
+      </div>
+    </div>
+
+   <section id="itinerary" class="section itinerary-section">
+  <div class="container">
+
+    <div class="section__head">
+      <div>
+        <div class="eyebrow">Itinerary</div>
+        <h2 class="h2">Ephesus & Ancient Wonders – Full Day Cultural Experience</h2>
+        <p class="muted">
+          A refined journey through classical history, designed for travelers seeking depth,
+          comfort, and authenticity. Carefully operated by YFS Turizm.
+        </p>
+      </div>
+    </div>
+
+    <div class="itinerary-content">
+
+      <h3 class="itinerary-title">Morning | Private Pick-Up & Introduction</h3>
+      <p class="itinerary-text">
+        Your experience begins with a scheduled pick-up from your hotel in a modern,
+        air-conditioned vehicle. From the first moment, YFS Turizm ensures a smooth,
+        unhurried, and comfortable start to the day.
+      </p>
+      <p class="itinerary-text">
+        During the journey, your licensed professional guide provides a comprehensive
+        introduction to the historical significance of Ephesus, outlining its role as one
+        of the most influential cities of the ancient world.
+      </p>
+
+      <h3 class="itinerary-title">Ephesus Ancient City | Guided Exploration</h3>
+      <p class="itinerary-text">
+        Upon arrival, you enter the legendary Ephesus Ancient City, a remarkably preserved
+        archaeological site reflecting the power and sophistication of Roman civilization.
+        Walking along its marble streets, you will discover how daily life once unfolded
+        in a city that hosted emperors, merchants, scholars, and philosophers.
+      </p>
+
+      <ul class="itinerary-list">
+        <li><strong>Celsus Library</strong> – a symbol of knowledge and architectural excellence</li>
+        <li><strong>Great Theatre</strong> – an extraordinary structure with a capacity of 25,000 spectators</li>
+        <li><strong>Marble Road</strong> – the ceremonial axis of the ancient city</li>
+        <li><strong>Temple of Hadrian</strong> – dedicated to imperial authority and Roman artistry</li>
+        <li><strong>Agora</strong> – the commercial and social center of Ephesus</li>
+        <li><strong>Ancient Baths & Fountains</strong> – showcasing advanced Roman engineering</li>
+      </ul>
+
+      <p class="itinerary-text">
+        Throughout the visit, your guide offers detailed explanations, allowing time for
+        photography, observation, and personal exploration without rushing.
+      </p>
+
+      <h3 class="itinerary-title">Midday | Lunch Break</h3>
+      <p class="itinerary-text">
+        A carefully timed lunch break is provided at a selected local restaurant.
+        Guests may enjoy regional flavors and take time to relax before continuing
+        the afternoon program. Lunch is optional and flexible according to guest preference.
+      </p>
+
+      <h3 class="itinerary-title">House of Virgin Mary | Spiritual Heritage</h3>
+      <p class="itinerary-text">
+        The journey continues to the House of Virgin Mary, located in a serene natural
+        setting on Mount Bülbül. Recognized as a sacred pilgrimage site, this location
+        offers a calm and reflective atmosphere distinct from the archaeological intensity
+        of Ephesus.
+      </p>
+      <p class="itinerary-text">
+        Visitors may spend quiet moments in contemplation while learning about the
+        site’s importance within Christian tradition and world heritage.
+      </p>
+
+      <h3 class="itinerary-title">Temple of Artemis | Ancient Wonder</h3>
+      <p class="itinerary-text">
+        The final historical stop is the Temple of Artemis, once counted among the Seven
+        Wonders of the Ancient World. Although only fragments remain today, the scale
+        and influence of the temple are brought vividly to life through expert narration.
+      </p>
+
+      <h3 class="itinerary-title">Afternoon | Return Journey</h3>
+      <p class="itinerary-text">
+        After a full day of cultural discovery, guests are comfortably transferred
+        back to their hotel. The experience concludes with the assurance of YFS Turizm’s
+        high service standards and attention to detail.
+      </p>
+
+      <p class="itinerary-footer">
+        This itinerary is designed for travelers who value history, structure,
+        and refined travel experiences.
+      </p>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+        
+    <section id="included" class="section section--alt">
+      <div class="container">
+        <div class="section__head">
+          <div><div class="eyebrow">Clarity</div><h2 class="h2">Inclusions & exclusions</h2></div>
+        </div>
+        <div class="grid features">
+          <article class="feature"><h3 class="h3">Included</h3><p class="muted">Routing, planning, guiding (package dependent), support on WhatsApp.</p></article>
+          <article class="feature"><h3 class="h3">Optional</h3><p class="muted">Private guide, upgraded vehicle, add-on experiences.</p></article>
+          <article class="feature"><h3 class="h3">Not included</h3><p class="muted">Personal expenses, tips, some tickets/fees (depending on package).</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq-ephesus" class="section section--alt">
+  <div class="container">
+
+    <div class="section__head">
+      <div>
+        <div class="eyebrow">FAQ</div>
+        <h2 class="h2">Ephesus & Ancient Wonders – Frequently Asked Questions</h2>
+        <p class="muted">
+          Straight answers to the most common questions before visiting Ephesus with YFS Turizm.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid" style="grid-template-columns:repeat(3,minmax(0,1fr));gap:16px">
+
+      <article class="feature">
+        <h3 class="h3">How long is the Ephesus tour?</h3>
+        <p class="muted">
+          Most Ephesus programs run as a full-day tour including transfers, guided walking time inside the ancient city,
+          and selected nearby highlights depending on your route.
+        </p>
+      </article>
+
+      <article class="feature">
+        <h3 class="h3">Where does pickup happen?</h3>
+        <p class="muted">
+          Pickup can be arranged from hotels in the area and from cruise ports.
+          Your exact pickup time and meeting point are confirmed one day before the tour.
+        </p>
+      </article>
+
+      <article class="feature">
+        <h3 class="h3">Is the tour suitable for cruise guests?</h3>
+        <p class="muted">
+          Yes. We plan timing around ship schedules and local conditions. We recommend an early start for the smoothest experience.
+        </p>
+      </article>
+
+      <article class="feature">
+        <h3 class="h3">How much walking is involved?</h3>
+        <p class="muted">
+          Walking is moderate to high due to the size of the site and the stone pathways.
+          Surfaces can be uneven and slippery when wet, so comfortable walking shoes are essential.
+        </p>
+      </article>
+
+      <article class="feature">
+        <h3 class="h3">Is Ephesus accessible for strollers or wheelchairs?</h3>
+        <p class="muted">
+          Parts of Ephesus include uneven stones and slopes. We can adjust the route to reduce difficulty where possible,
+          but full accessibility is limited at the archaeological site.
+        </p>
+      </article>
+
+      <article class="feature">
+        <h3 class="h3">Are entrance tickets included?</h3>
+        <p class="muted">
+          Depending on the package, entrance fees may be included or optional.
+          YFS Turizm confirms all inclusions clearly before you book.
+        </p>
+      </article>
+
+      <article class="feature">
+        <h3 class="h3">What will we see inside Ephesus?</h3>
+        <p class="muted">
+          Key highlights typically include the Library of Celsus, the Great Theatre, Marble Road, the Agora,
+          and major Roman-era streets and structures.
+        </p>
+      </article>
+
+      <article class="feature">
+        <h3 class="h3">Is the House of Virgin Mary included?</h3>
+        <p class="muted">
+          It can be included as an optional stop depending on your route and timing.
+          If it is important for your visit, tell us in advance so we prioritize it.
+        </p>
+      </article>
+
+      <article class="feature">
+        <h3 class="h3">Do we visit the Temple of Artemis?</h3>
+        <p class="muted">
+          The Temple of Artemis is often offered as a short photo stop. It is a quick visit compared to Ephesus itself,
+          but it is historically significant and can be included when timing allows.
+        </p>
+      </article>
+
+      <article class="feature">
+        <h3 class="h3">What about lunch?</h3>
+        <p class="muted">
+          Lunch is usually scheduled after the main Ephesus visit so guests can rest.
+          Restaurant choice is based on cleanliness, comfort, and consistent quality.
+        </p>
+      </article>
+
+      <article class="feature">
+        <h3 class="h3">What should I bring?</h3>
+        <p class="muted">
+          Comfortable shoes, sun protection, and water are strongly recommended.
+          In summer months, lighter clothing and earlier starts improve comfort.
+        </p>
+      </article>
+
+      <article class="feature">
+        <h3 class="h3">When is the best season to visit?</h3>
+        <p class="muted">
+          Spring and autumn are the most comfortable seasons. Summer visits are possible with early timing to avoid peak heat.
+          Winter can be quieter but may include rain.
+        </p>
+      </article>
+
+      <article class="feature">
+        <h3 class="h3">Do you offer private Ephesus tours?</h3>
+        <p class="muted">
+          Yes. Private tours are available and recommended for families, couples, photographers,
+          and travelers who want a flexible pace and customized stops.
+        </p>
+      </article>
+
+      <article class="feature">
+        <h3 class="h3">Do you include shopping stops?</h3>
+        <p class="muted">
+          No forced shopping. If you want local crafts or a brief visit to a traditional workshop, it can be added by request —
+          always optional, never pressure.
+        </p>
+      </article>
+
+      <article class="feature">
+        <h3 class="h3">Can we combine Ephesus with other places?</h3>
+        <p class="muted">
+          Yes. Popular combinations include Ephesus + Şirince Village, Ephesus + Virgin Mary House,
+          or a multi-day plan connecting Pamukkale or Istanbul flights.
+        </p>
+      </article>
+
+      <article class="feature">
+        <h3 class="h3">How do we book with YFS Turizm?</h3>
+        <p class="muted">
+          Send your date, pickup location (hotel or port), and group size.
+          We reply with clear options (standard and private) and confirm the final schedule.
+        </p>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+
+        <div class="callout">
+          <div>
+            <h3 class="h3">Want exact price & availability?</h3>
+            <p class="muted">Send dates + hotel area. We reply with clear options.</p>
+          </div>
+          <a class="btn btn--solid" href="https://wa.me/905324275014?text=Hi%20YFS%20TURIZM!%20I%20want%20to%20book%20a%20tour." target="_blank" rel="noopener">WhatsApp now</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <div class="footer__brand">YFS TURIZM</div>
+        <div class="muted mini">We do not currently have a TURSAB license.</div>
+      </div>
+      <div class="footer__links">
+        <a href="index.html#tours">Tours</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <div class="footer__links">
+        <a href="https://wa.me/905324275014?text=Hi%20YFS%20TURIZM!%20I%20want%20to%20book%20a%20tour." target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+    <div class="container footer__bottom muted mini">© <span data-year></span> YFS TURIZM.</div>
+  </footer>
+</body>
+</html>
