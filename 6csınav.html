@@ -319,12 +319,24 @@
                 </div>
             </div>
         </div>
-<iframe
-	src="https://chathuggingface-chat-ui.hf.space"
-	frameborder="0"
-	width="100%"
-	height="600"
-></iframe>
+async function chatSor(mesaj) {
+    const response = await fetch(
+        "https://api-inference.huggingface.co/models/meta-llama/Llama-3.1-8B-Instruct",
+        {
+            headers: { 
+                Authorization: "Bearer yafesyafes12345678910", // Kendi token'ını buraya yapıştır
+                "Content-Type": "application/json" 
+            },
+            method: "POST",
+            body: JSON.stringify({
+                inputs: mesaj,
+                parameters: { max_new_tokens: 250, language: "tr" }
+            }),
+        }
+    );
+    const result = await response.json();
+    return result[0].generated_text;
+}
         <!-- PDF DOSYASINA YÖNLENDİRME BUTONU -->
 <div class="topic-card" style="background: #fff0db; border: 2px solid #c5a56b;">
     <div class="card-header" style="background: #d9b48b;">
