@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>6. Sınıf Din Kültürü | Kunut Duaları ve Ahlak Sınavı</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(145deg, #f5f0e7 0%, #e9e0d3 100%);
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+            padding: 30px 20px;
+            color: #2c2418;
+        }
+
+        /* ana container */
+        .exam-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #fffef7;
+            border-radius: 48px;
+            box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.35);
+            overflow: hidden;
+            border: 1px solid #e2d8c8;
+        }
+
+        /* başlık ve öğrenci bilgisi */
+        .header-card {
+            background: #2e5a3e;
+            padding: 30px 35px;
+            color: white;
+            border-bottom: 8px solid #f9b81b;
+        }
+
+        .header-card h1 {
+            font-size: 2.2rem;
+            letter-spacing: -0.5px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .header-card h1 small {
+            font-size: 1rem;
+            background: #f9b81b;
+            color: #2e5a3e;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-weight: 600;
+        }
+
+        .student-info {
+            margin-top: 20px;
+            background: #3d6e50;
+            border-radius: 28px;
+            padding: 15px 22px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.1rem;
+        }
+
+        .student-badge {
+            background: #f9b81b;
+            color: #2e5a3e;
+            font-weight: bold;
+            padding: 6px 18px;
+            border-radius: 40px;
+        }
+
+        /* kunut duaları özel bölüm */
+        .dua-section {
+            background: #fcf8ed;
+            margin: 25px 30px;
+            border-radius: 32px;
+            padding: 20px 25px;
+            border-left: 12px solid #f9b81b;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.05);
+        }
+
+        .dua-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #2e5a3e;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+
+        .dua-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: space-between;
+        }
+
+        .dua-card {
+            flex: 1;
+            min-width: 260px;
+            background: white;
+            border-radius: 28px;
+            padding: 20px;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+            transition: all 0.2s;
+        }
+
+        .dua-card h3 {
+            color: #b4631a;
+            border-bottom: 2px dashed #e9c891;
+            padding-bottom: 8px;
+            margin-bottom: 16px;
+            font-size: 1.4rem;
+        }
+
+        .arabic {
+            font-size: 1.5rem;
+            line-height: 1.6;
+            font-family: 'Amiri', 'Traditional Arabic', 'Times New Roman', serif;
+            text-align: right;
+            direction: rtl;
+            background: #fef3dd;
+            padding: 14px;
+            border-radius: 20px;
+            margin: 12px 0;
+        }
+
+        .meaning {
+            background: #f1efe4;
+            padding: 14px;
+            border-radius: 20px;
+            font-style: normal;
+            line-height: 1.5;
+            margin-top: 8px;
+        }
+
+        /* sorular alanı */
+        .questions-area {
+            padding: 15px 30px 40px 30px;
+        }
+
+        .section-title {
+            font-size: 1.9rem;
+            font-weight: 700;
+            margin: 20px 0 15px 0;
+            padding-bottom: 8px;
+            border-bottom: 3px solid #f9b81b;
+            display: inline-block;
+            color: #2c4a32;
+        }
+
+        .question-item {
+            background: white;
+            border-radius: 28px;
+            margin-bottom: 32px;
+            padding: 22px 28px;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.07);
+            transition: 0.1s;
+            border: 1px solid #ede3d0;
+        }
+
+        .q-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 18px;
+            background: #fef9f0;
+            padding: 12px 18px;
+            border-radius: 28px;
+            color: #2e241a;
+        }
+
+        .q-num {
+            display: inline-block;
+            background: #2e5a3e;
+            color: white;
+            border-radius: 60px;
+            width: 32px;
+            height: 32px;
+            text-align: center;
+            line-height: 32px;
+            font-weight: bold;
+            margin-right: 12px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 16px 18px;
+            border-radius: 24px;
+            border: 1px solid #d6cbaf;
+            font-family: inherit;
+            font-size: 1rem;
+            background: #fefcf7;
+            resize: vertical;
+            transition: 0.2s;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #f9b81b;
+            box-shadow: 0 0 0 3px rgba(249,184,27,0.2);
+        }
+
+        .btn-submit {
+            background: #2e5a3e;
+            color: white;
+            border: none;
+            padding: 14px 32px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 60px;
+            cursor: pointer;
+            margin: 20px 0 20px;
+            transition: 0.2s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .btn-submit:hover {
+            background: #1f4230;
+            transform: scale(0.98);
+        }
+
+        .result-area {
+            background: #e9f0ea;
+            border-radius: 32px;
+            padding: 20px 28px;
+            margin-top: 25px;
+            margin-bottom: 20px;
+            font-weight: 500;
+            display: none;
+        }
+
+        .result-area.show {
+            display: block;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.8rem;
+            padding: 20px;
+            background: #e7dfd1;
+            color: #4d3e2c;
+        }
+
+        @media (max-width: 680px) {
+            .exam-container {
+                border-radius: 28px;
+            }
+            .question-item {
+                padding: 16px;
+            }
+            .dua-card {
+                min-width: 100%;
+            }
+        }
+
+        .info-note {
+            background: #f9e9cf;
+            padding: 10px 20px;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            margin-top: 15px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<div class="exam-container">
+    <div class="header-card">
+        <h1>
+            📖 DİN KÜLTÜRÜ VE AHLAK BİLGİSİ 
+            <small>2. Dönem 1. Ortak Yazılı</small>
+        </h1>
+        <div class="student-info">
+            <span>📌 Senaryo 1 | Ahlak, Peygamber ve Dua Ünitesi</span>
+            <span class="student-badge">👤 Kurucu Yafes Gümüş - 6/C Sınıfı</span>
+        </div>
+        <div class="info-note">
+            ⭐ Değerli Öğrenci, Kunut dualarını okuyup anlamlarını iyi kavrayarak uzun ve açıklayıcı cevaplar yazınız. 
+            Her soru 10 puan değerindedir (toplam 70 puan). Başarılar!
+        </div>
+    </div>
+
+    <!-- KUNUT DUALARI ve anlamları bölümü -->
+    <div class="dua-section">
+        <div class="dua-title">
+            🤲 Kunut Duaları & Anlamları 
+            <span style="font-size: 1rem;">(Bir Dua Öğreniyorum)</span>
+        </div>
+        <div class="dua-grid">
+            <div class="dua-card">
+                <h3>📿 Kunut Duası - 1</h3>
+                <div class="arabic">اَللَّهُمَّ إِنَّا نَسْتَعِينُكَ وَنَسْتَغْفِرُكَ وَنُؤْمِنُ بِكَ وَنَتَوَكَّلُ عَلَيْكَ وَنُثْنِي عَلَيْكَ الْخَيْرَ وَنَشْكُرُكَ وَلَا نَكْفُرُكَ وَنَخْلَعُ وَنَتْرُكُ مَنْ يَفْجُرُكَ</div>
+                <div class="meaning"><strong>Anlamı:</strong> "Allah'ım! Biz yalnız senden yardım diler, senden bağışlanma dileriz. Sana iman eder, sana güveniriz. Seni hayır ile över, sana şükrederiz, nankörlük etmeyiz. Sana karşı gelenleri terk edip onlardan uzaklaşırız."</div>
+            </div>
+            <div class="dua-card">
+                <h3>🤲 Kunut Duası - 2</h3>
+                <div class="arabic">اَللَّهُمَّ إِيَّاكَ نَعْبُدُ وَلَكَ نُصَلِّي وَنَسْجُدُ وَإِلَيْكَ نَسْعَى وَنَحْفِدُ نَرْجُو رَحْمَتَكَ وَنَخْشَى عَذَابَكَ إِنَّ عَذَابَكَ الْجِدَّ بِالْكُفَّارِ مُلْحِقٌ</div>
+                <div class="meaning"><strong>Anlamı:</strong> "Allah'ım! Yalnız sana kulluk eder, namaz kılar ve secde ederiz. Yalnız sana koşar, sana ibadet ederiz. Rahmetini umar, azabından korkarız. Şüphesiz senin şiddetli azabın inkârcılara ulaşacaktır."</div>
+            </div>
+            <div class="dua-card">
+                <h3>💫 Özet Yorum</h3>
+                <div class="meaning">Kunut duaları, özellikle vitir namazında okunan, Allah'a sığınmayı, itaati, yardım dilemeyi ve O'na olan bağlılığı ifade eden kıymetli dualardır. Bu dualar kulun acziyetini ve Yüce Allah'a olan teslimiyetini gösterir, aynı zamanda merhamet ve doğruluk bilincini artırır.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- UZUN SORULAR BÖLÜMÜ (konu dağılımına göre: Doğru sözlülük, merhamet, adap, vatan sevgisi, peygamber öncesi, Kunut duaları vb) -->
+    <div class="questions-area">
+        <span class="section-title">📝 Uzun Cevaplı Sınav Soruları</span>
+        <div class="question-item">
+            <div class="q-text"><span class="q-num">1</span> Doğru sözlü olmak ile ilgili günlük hayattan iki örnek veriniz. Doğruluğun bireysel ve toplumsal hayata etkilerini kendi yaşantınızdan hareketle uzunca açıklayınız. (10 Puan)</div>
+            <textarea rows="4" placeholder="Cevabınızı buraya yazın... (En az 4-5 cümle)"></textarea>
+        </div>
+        <div class="question-item">
+            <div class="q-text"><span class="q-num">2</span> Merhametli olmak nedir? Peygamber Efendimiz'in (s.a.v.) hayatından bir merhamet örneği vererek, merhametin insanı nasıl olgunlaştırdığını anlatınız. Ayrıca çevrenizdeki canlılara karşı merhametli olmak için neler yapabilirsiniz? (10 Puan)</div>
+            <textarea rows="4" placeholder="Merhamet konusundaki düşüncelerinizi örneklerle detaylandırın..."></textarea>
+        </div>
+        <div class="question-item">
+            <div class="q-text"><span class="q-num">3</span> Adap ve nezaket kurallarından beş tanesini yazıp kısaca açıklayınız. Okulda, evde ve sokakta uyulması gereken görgü kuralları nelerdir? Bu kuralların toplum huzuruna katkısını değerlendiriniz. (10 Puan)</div>
+            <textarea rows="4" placeholder="Nezaket kurallarını sıralayıp etkilerini yazınız..."></textarea>
+        </div>
+        <div class="question-item">
+            <div class="q-text"><span class="q-num">4</span> Vatan sevgisi ve vatanımıza sahip çıkmanın önemi hakkında bir kompozisyon yazınız. Vatan savunmasında milli birlik ve beraberliğin rolü nedir? Atatürk'ün “Vatanını en çok seven, görevini en iyi yapandır.” sözünü yorumlayınız. (10 Puan)</div>
+            <textarea rows="4" placeholder="Vatan sevgisi, fedakarlık ve birlik duygusunu anlatan kapsamlı bir cevap..."></textarea>
+        </div>
+        <div class="question-item">
+            <div class="q-text"><span class="q-num">5</span> Kunut dualarının anlamlarını maddeler halinde yazınız. Bu duaların hayatımıza kazandırdığı manevi değerler nelerdir? Allah'a sığınma, şükretme ve yardım dileme konularında Kunut duasının mesajlarını uzunca açıklayınız. (10 Puan)</div>
+            <textarea rows="4" placeholder="Kunut dualarındaki ana temaları ve bireye katkılarını yazın..."></textarea>
+        </div>
+        <div class="question-item">
+            <div class="q-text"><span class="q-num">6</span> Hz. Muhammed (s.a.v.) peygamber olmadan önce Mekke toplumunda yaşanan cahiliye dönemi özelliklerinden üç tanesini yazınız. Hz. Muhammed'in “Muhammedü'l-Emin” (güvenilir kişi) olarak anılmasının sebepleri nelerdir? Bu özellikler onun peygamberlik görevine nasıl hazırlık olmuştur? (10 Puan)</div>
+            <textarea rows="4" placeholder="Cahiliye dönemi, güvenilirlik ve peygamberlik misyonu arasındaki ilişkiyi yazın..."></textarea>
+        </div>
+        <div class="question-item">
+            <div class="q-text"><span class="q-num">7</span> Ahlak ve davranışlar ünitesinde "merhamet, doğruluk, nezaket ve vatan sevgisi" kavramları arasında nasıl bir bağ vardır? Bu erdemleri birleştiren ortak değerleri örneklerle açıklayarak, ideal bir Müslüman'ın bu özellikleri nasıl yansıtması gerektiğini anlatınız. (10 Puan)</div>
+            <textarea rows="4" placeholder="Tüm erdemleri kapsayan bir değerlendirme, uzun cevap..."></textarea>
+        </div>
+        <div style="text-align: center; margin-top: 20px;">
+            <button class="btn-submit" id="checkAnswersBtn">📌 CEVAPLARI DEĞERLENDİR (Öneri)</button>
+        </div>
+        <div id="resultMessage" class="result-area">
+            ⭐ <strong>Değerlendirme Notu:</strong> Cevaplarınızı kontrol ettik. Her soruyu samimi ve uzunca yanıtlamaya çalışın. Başarılı olmak için Kunut dualarının anlamlarını ve ahlak konularını kendi cümlelerinizle ifade edin. Öğretmeninize teslim etmeden önce cevaplarınızı gözden geçirin!
+        </div>
+    </div>
+    <footer>
+        Kurucu Yafes Gümüş - 6/C Sınıfı 💚 Din Kültürü ve Ahlak Bilgisi | 2. Dönem 1. Yazılı Senaryo-1
+    </footer>
+</div>
+
+<script>
+    // Butona tıklandığında sadece teşvik edici ve hatırlatıcı bir mesaj gösterir.
+    // Öğrencinin yazdıklarını alıp yapay değerlendirme (basit kontrol) yapar.
+    const checkBtn = document.getElementById('checkAnswersBtn');
+    const resultDiv = document.getElementById('resultMessage');
+
+    checkBtn.addEventListener('click', () => {
+        const textareas = document.querySelectorAll('textarea');
+        let allAnswered = true;
+        let emptyCount = 0;
+        let longAnswerCount = 0;
+        
+        textareas.forEach((ta, index) => {
+            const val = ta.value.trim();
+            if (val === "") {
+                allAnswered = false;
+                emptyCount++;
+            } else if (val.split(/\s+/).length >= 20) {
+                // yaklaşık 20 kelime üzeri gayet iyi cevap
+                longAnswerCount++;
+            }
+        });
+
+        let feedback = "";
+        if (emptyCount === 0) {
+            feedback = "🎉 Harika! Tüm soruları cevapladınız. Cevaplarınızı okuyunca gayretli olduğunuzu görüyorum. Kunut dualarının anlamlarını iyi kavradığınızdan emin olun. Sınavda başarılar dilerim! (Öğretmeninize göstermeden önce yazılarınızı kontrol edin)";
+        } else if (emptyCount <= 2) {
+            feedback = `📌 ${emptyCount} soruyu boş bıraktınız. Mümkün olduğunca her soruyu içten ve örneklerle doldurun. Kunut duaları ve ahlak bilgisi konularında düşüncelerinizi yazmaktan çekinmeyin. Başarıya çok yakınsınız!`;
+        } else {
+            feedback = `⚠️ ${emptyCount} soru boş görünüyor. Lütfen tüm soruları ayrıntılı şekilde cevaplandırın. Unutmayın ki doğru sözlülük, merhamet, vatan sevgisi ve Kunut dualarının anlamları sınavda önem taşır. Cevaplarınızı zenginleştirin.`;
+        }
+        
+        if (longAnswerCount >= 5) {
+            feedback += " ✨ Ayrıca birçok soruda uzun ve kapsamlı cevaplar vermişsiniz, bu çok takdire şayan! Bu şekilde devam edin.";
+        } else {
+            feedback += " 📖 Daha ayrıntılı cevaplar için Kunut dualarının anlamlarını ve verilen konuları örneklerle genişletin. Her soru değerlidir!";
+        }
+
+        resultDiv.innerHTML = `<strong>📢 Geri Bildirim:</strong> ${feedback}<br><br>🎯 Sınav soruları: Doğruluk, merhamet, adap, vatan, peygamber öncesi toplum ve Kunut duaları. Cevaplarınızda bu başlıklara sadık kalınız.`;
+        resultDiv.classList.add('show');
+        
+        // ek olarak cevapları konsola yazdırmak istemez ama öğrenci kendine not alabilir
+        window.scrollTo({
+            top: resultDiv.offsetTop - 30,
+            behavior: 'smooth'
+        });
+    });
+
+    // isteğe bağlı: cevap alanlarını otomatik genişletme / keyifli deneyim
+    const allTextareas = document.querySelectorAll('textarea');
+    allTextareas.forEach(ta => {
+        ta.addEventListener('input', function() {
+            this.style.overflow = 'hidden';
+            this.style.height = 'auto';
+            this.style.height = (this.scrollHeight) + 'px';
+        });
+    });
+    
+    // sayfa yüklendiğinde örnek bir bilgi mesajı - öğrenci için hazırlık notu
+    setTimeout(() => {
+        if(!resultDiv.classList.contains('show')) {
+            // ufak ipucu, rahatsız etmez
+            resultDiv.innerHTML = "💡 İpucu: Kunut dualarının anlamlarını sorularla ilişkilendirin. Örneğin 5. soruda duaların içindeki teslimiyet ve şükür vurgusunu vurgulayın.";
+            resultDiv.classList.add('show');
+            setTimeout(() => {
+                // mesaj kalıcı olmasın istersen kaldır, ama öğrenci sınav için faydalı.
+                // fakat silinmesin dursun isteğe bağlı. İyilik olsun dursun.
+            }, 4000);
+        }
+    }, 800);
+</script>
+</body>
+</html>
