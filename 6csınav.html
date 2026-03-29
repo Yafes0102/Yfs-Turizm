@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>6. Sınıf Sosyal Bilgiler | Ortak Yazılı Hazırlık - Kurucu Yafeş Gümüş</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(145deg, #f2efe5 0%, #e8e2d4 100%);
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            padding: 20px 25px 50px;
+            color: #1e2a2f;
+        }
+
+        /* akıllı tahta / dokunmatik dostu */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: rgba(255, 255, 245, 0.92);
+            border-radius: 64px 64px 48px 48px;
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2), inset 0 1px 2px rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(0px);
+            overflow: hidden;
+            transition: all 0.2s;
+        }
+
+        /* başlık alanı - kurucu vurgusu */
+        .hero {
+            background: #1e3c2c;
+            background-image: radial-gradient(circle at 10% 30%, #2b5a3e, #0e2a1c);
+            padding: 2rem 2rem 1.8rem;
+            color: #fef7e0;
+            text-align: center;
+            border-bottom: 6px solid #f7b32b;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            letter-spacing: -0.5px;
+            font-weight: 800;
+            text-shadow: 3px 3px 0 #1f3b2c;
+            word-break: break-word;
+        }
+
+        .hero .kurucu {
+            font-size: 1.3rem;
+            margin-top: 12px;
+            background: #f7b32bdd;
+            display: inline-block;
+            padding: 8px 24px;
+            border-radius: 60px;
+            font-weight: bold;
+            color: #1e3c2c;
+            backdrop-filter: blur(4px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .hero .amac {
+            margin-top: 18px;
+            font-size: 1.2rem;
+            font-weight: 500;
+            background: #00000040;
+            border-radius: 40px;
+            padding: 8px 20px;
+            display: inline-block;
+        }
+
+        .badge-senaryo {
+            background: #ffcd7e;
+            color: #2c472e;
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-top: 15px;
+        }
+
+        /* içerik grid */
+        .content-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            padding: 35px 30px;
+        }
+
+        /* her konu kartı - dokunmatik için geniş alan */
+        .topic-card {
+            background: #ffffffea;
+            border-radius: 48px;
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s;
+            overflow: hidden;
+            border: 1px solid #e0d6c2;
+        }
+
+        .topic-card:hover {
+            transform: scale(1.01);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-header {
+            background: #f5e7d3;
+            padding: 20px 28px;
+            border-bottom: 3px solid #c5a56b;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 12px;
+        }
+
+        .card-header h2 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            color: #2a4b2f;
+            letter-spacing: -0.3px;
+        }
+
+        .soru-count {
+            background: #2a4b2f;
+            color: white;
+            border-radius: 60px;
+            padding: 8px 20px;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        .card-body {
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .info-section {
+            background: #fefaf2;
+            border-radius: 32px;
+            padding: 20px 26px;
+            border-left: 12px solid #f7b32b;
+        }
+
+        .info-section h3 {
+            font-size: 1.7rem;
+            font-weight: 600;
+            margin-bottom: 14px;
+            color: #8b5a2b;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .info-section p, .info-section li {
+            font-size: 1.2rem;
+            line-height: 1.5;
+            margin-bottom: 12px;
+            color: #2d3e2b;
+        }
+
+        .info-section ul, .info-section ol {
+            padding-left: 28px;
+            margin: 12px 0;
+        }
+
+        .highlight {
+            background: #faeec2;
+            padding: 14px 20px;
+            border-radius: 28px;
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        .button-tip {
+            background: #e7dbbc;
+            border-radius: 60px;
+            padding: 10px 18px;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #2b4b2a;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 12px;
+            cursor: default;
+            user-select: none;
+        }
+
+        hr {
+            margin: 10px 0;
+            border-color: #ddceb5;
+        }
+
+        footer {
+            background: #1e2f23;
+            color: #e9e0cb;
+            text-align: center;
+            padding: 24px;
+            font-size: 1rem;
+            border-top: 4px solid #f7b32b;
+        }
+
+        @media (max-width: 750px) {
+            body {
+                padding: 12px;
+            }
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+            .card-header h2 {
+                font-size: 1.5rem;
+            }
+            .card-body {
+                padding: 20px;
+            }
+            .info-section h3 {
+                font-size: 1.4rem;
+            }
+            .info-section p, .info-section li {
+                font-size: 1rem;
+            }
+            .button-tip {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* dokunmatik hedefler */
+        button, .clickable {
+            cursor: pointer;
+        }
+
+        .glow-text {
+            font-weight: 700;
+            color: #c4631b;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="hero">
+        <h1>📜 SOSYAL BİLGİLER 6 📜</h1>
+        <div class="kurucu">🏆 KURUCU: YAFEŞ GÜMÜŞ 🏆</div>
+        <div class="amac">🎯 6-C SINIFININ YÜKSEK NOT ALMASI İÇİN ÖZEL HAZIRLIK PLATFORMU 🎯</div>
+        <div class="badge-senaryo">⭐ SENARYO 3 | 2. DÖNEM 1. ORTAK YAZILI ⭐</div>
+    </div>
+
+    <div class="content-grid">
+        <!-- KONU 1: XI-XIII. Yüzyıllar Askeri Mücadele ve Anadolu’nun İslamlaşması (2 soru) -->
+        <div class="topic-card">
+            <div class="card-header">
+                <h2>⚔️ XI–XIII. Yüzyıllar: Askeri Mücadele ve Anadolu’nun İslamlaşması</h2>
+                <div class="soru-count">📌 2 soru</div>
+            </div>
+            <div class="card-body">
+                <div class="info-section">
+                    <h3>🏹 Öğrenme Çıktısı: SB.6.3.4</h3>
+                    <p><strong>XI-XIII. yüzyıllar arasında meydana gelen siyasi faaliyetler ve askeri mücadelelerin Anadolu’nun Türkiye’nin İslamlaşmasına etkisini özetleyebilme</strong></p>
+                    <ul>
+                        <li><span class="glow-text">✅ Malazgirt Meydan Muharebesi (1071)</span> – Büyük Selçuklu Hükümdarı Alp Arslan’ın Bizans’ı yenmesiyle Anadolu'nun kapıları Türklere açıldı. Türk boyları akınlar düzenleyerek Anadolu'ya yerleşti.</li>
+                        <li><span class="glow-text">✅ İlk Türk Beylikleri</span> (Saltuklular, Danişmendliler, Mengücekliler, Artuklular) Anadolu'da İslamiyet'in yayılmasında öncü oldu; camiler, medreseler ve kervansaraylar inşa ettiler.</li>
+                        <li><span class="glow-text">✅ Haçlı Seferleri</span> (1096-1270) – Anadolu'daki İslam topraklarını hedef alsa da, Türk direnişi (I. Kılıçarslan, Nuriddin Zengi, Selahaddin Eyyubi) sayesinde Anadolu'da Müslüman Türk varlığı güçlendi.</li>
+                        <li><span class="glow-text">✅ Anadolu Selçuklu Devleti (1075-1308)</span> – İslam medeniyetinin merkezi haline geldi; ticaret yolları güvenli hale getirildi, şehirlerde İslam kültürü kökleşti. Moğol istilasına rağmen Türk-İslam sentezi kalıcı oldu.</li>
+                        <li><span class="glow-text">📖 Sonuç:</span> Anadolu, hem etnik hem dini açıdan Türk-İslam yurdu hâline geldi. Bu süreçte göçler, fetihler, iskân politikaları ve dinî hoşgörü (Mevlâna, Hacı Bektaş-ı Veli gibi şahsiyetler) etkili oldu.</li>
+                    </ul>
+                    <div class="highlight">💡 Sınav ipucu: Malazgirt, Haçlı Seferleri, İlk beylikler ve Selçuklu mimarisi (kümbet, medrese) mutlaka sorulur! Anadolu’nun İslamlaşmasında gazâ ve cihat anlayışı büyük rol oynadı.</div>
+                    <div class="button-tip">📌 2 soru tipi: Açık uçlu / eşleştirme - Özetleme ve neden-sonuç ilişkisi</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- KONU 2: Yönetimin Karar Alma Sürecini Etkileyen Unsurlar (2 soru) -->
+        <div class="topic-card">
+            <div class="card-header">
+                <h2>🏛️ Yönetimin Karar Alma Sürecini Etkileyen Unsurlar</h2>
+                <div class="soru-count">📌 2 soru</div>
+            </div>
+            <div class="card-body">
+                <div class="info-section">
+                    <h3>⚖️ SB.6.4.1 – Yönetimin karar alma sürecini etkileyen unsurları çözümleyebilme</h3>
+                    <ul>
+                        <li><strong>🔹 Kamuoyu ve Medya:</strong> Halkın talepleri, basın ve sosyal medya yöneticilerin kararlarını doğrudan etkiler. Günümüzde dijital platformlar karar alma hızını artırır.</li>
+                        <li><strong>🔹 Sivil Toplum Kuruluşları (STK):</strong> Çevre, eğitim, insan hakları gibi konularda baskı grupları karar mekanizmalarını yönlendirir.</li>
+                        <li><strong>🔹 Hukuk ve Anayasa:</strong> Alınan her karar yasal çerçeveye uygun olmak zorundadır. Hukukun üstünlüğü ilkesi temeldir.</li>
+                        <li><strong>🔹 Ekonomik koşullar:</strong> Bütçe, enflasyon, işsizlik oranları; devlet politikalarını şekillendirir. Yatırım kararları ekonomik verilere göre alınır.</li>
+                        <li><strong>🔹 Uluslararası ilişkiler ve Küresel gelişmeler:</strong> İklim anlaşmaları, ticaret anlaşmaları, komşu ülkelerle ilişkiler iç politik kararları etkiler.</li>
+                        <li><strong>🔹 Bilim ve uzman görüşleri:</strong> Pandemi sürecinde olduğu gibi bilim kurullarının önerileri yönetim kararlarında belirleyicidir.</li>
+                        <li><strong>📌 Örnek olay:</strong> Bir belediyenin ulaşım zammı yaparken halkın tepkisini dikkate alması veya çevre projelerinde STK’larla işbirliği yapması.</li>
+                    </ul>
+                    <div class="highlight">🧠 Derin bilgi: Katılımcı demokrasi, şeffaflık ve hesap verebilirlik karar alma süreçlerini güçlendirir. Yerel yönetimlerde “kent konseyleri” önemli bir unsurdur.</div>
+                    <div class="button-tip">📌 2 soru – Analiz ve yorumlama (günlük hayattan örneklerle)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- KONU 3: Temel Hak ve Sorumlulukların Toplumsal Düzen İçin Önemi (2 soru) -->
+        <div class="topic-card">
+            <div class="card-header">
+                <h2>🕊️ Temel Haklar ve Sorumluluklar | Toplumsal Düzen</h2>
+                <div class="soru-count">📌 2 soru</div>
+            </div>
+            <div class="card-body">
+                <div class="info-section">
+                    <h3>📜 SB.6.4.2 – Toplumsal düzenin sürdürülmesinde temel hak ve sorumlulukların önemini yorumlayabilme</h3>
+                    <p><strong>Temel haklar:</strong> Yaşama hakkı, eğitim hakkı, sağlık hakkı, düşünce özgürlüğü, seçme ve seçilme hakkı, mülkiyet hakkı, adil yargılanma hakkı.<br>
+                    <strong>Sorumluluklar:</strong> Vergi vermek, çevreyi korumak, yasalara uymak, seçimlerde oy kullanmak, askerlik görevi, başkalarının haklarına saygı duymak.</p>
+                    <ul>
+                        <li>✔️ Haklar ve sorumluluklar dengede olmazsa toplumda kaos oluşur. Örneğin: Trafik kurallarına uymak hem sorumluluktur hem de herkesin can güvenliği hakkını korur.</li>
+                        <li>✔️ Toplumsal düzen, bireylerin haklarını ihlal etmeden yaşamasıyla sağlanır. Özgürlükler başkasının özgürlüğünün başladığı yerde biter.</li>
+                        <li>✔️ Eğitim hakkı her çocuk için devlet güvencesi altındadır; aynı zamanda ailelerin çocuklarını okula gönderme sorumluluğu vardır.</li>
+                        <li>✔️ İnsan hakları evrensel bildirgesi ve Anayasa bu konuda temel referanslardır. Toplumda huzur ve güven için haklar kadar sorumluluk bilinci de gelişmelidir.</li>
+                        <li>📢 Örnek: Pandemide maske takmak (sorumluluk) toplum sağlığı hakkını korur. Aynı şekilde çevre kirliliğini önlemek için geri dönüşüm yapmak gelecek nesillerin yaşama hakkını gözetir.</li>
+                    </ul>
+                    <div class="highlight">🏆 Unutma: Hak ihlalleri toplumsal çatışmaya yol açar. Sorumluluklarını bilen bireyler demokratik toplumun temelidir. 6. sınıf düzeyinde “haklarımızı bilmek ve kullanmak, sorumluluklarımızı yerine getirmek” anahtar ifadedir.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- KONU 4: Dijitalleşme, Teknolojik Gelişmeler ve Vatandaşlık Hak / Sorumluluklarına Etkileri (1 soru) -->
+        <div class="topic-card">
+            <div class="card-header">
+                <h2>💻 Dijitalleşme & Teknoloji – Vatandaşlık Hak ve Sorumlulukları</h2>
+                <div class="soru-count">📌 1 soru</div>
+            </div>
+            <div class="card-body">
+                <div class="info-section">
+                    <h3>📱 SB.6.4.3 – Vatandaşlık haklarının kullanımında dijitalleşme ve teknolojik gelişmelerin etkilerini sorgulayabilme</h3>
+                    <ul>
+                        <li><strong>✅ Olumlu Etkiler:</strong> e-Devlet kapısı sayesinde birçok işlem (vergi, nüfus, sağlık, eğitim) kolayca yapılır, zamandan tasarruf sağlanır. Dijital platformlar sayesinde bilgiye erişim hızlanır, kamuoyu oluşturma ve dilekçe hakları dijital ortamda da kullanılabilir.</li>
+                        <li><strong>⚠️ Olumsuz Etkiler / Sorunlar:</strong> Kişisel verilerin korunması (KVKK) önem kazanmıştır; siber zorbalık, dijital dolandırıcılık, yalan haber ve dezenformasyon vatandaşlık haklarını tehdit edebilir. Dijital uçurum (internete erişim eşitsizliği) bazı bireylerin haklarını kullanmasını engeller.</li>
+                        <li><strong>🔐 Dijital Vatandaşlık Sorumlulukları:</strong> Etik kurallara uymak, başkalarının dijital mahremiyetine saygı göstermek, yasa dışı içerikleri bildirmek, telif haklarına dikkat etmek, siber güvenlik önlemleri almak.</li>
+                        <li><strong>📢 Güncel Örnek:</strong> E-oylama tartışmaları, dijital kimlikler, çevrimiçi eğitim hakkı. Ayrıca sosyal medya üzerinden protesto hakkı veya fikir açıklama özgürlüğü yeni boyutlar kazanmıştır.</li>
+                    </ul>
+                    <div class="highlight">💡 Sorgulama sorusu: “Dijitalleşme vatandaşlık haklarını nasıl dönüştürdü? Mahremiyet hakkı ile ifade özgürlüğü arasındaki denge nasıl sağlanır?” sınavda çıkabilir. Teknolojiyi bilinçli kullanmak dijital vatandaşlık görevidir.</div>
+                    <div class="button-tip">📌 1 soru – Sorgulama / durum analizi veya doğru-yanlış şeklinde gelebilir.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- EKSTRA: BİLGİ KUTUSU – ÖZET TABLO / SINAV TAKTİKLERİ -->
+        <div class="topic-card" style="background: #faf3e0;">
+            <div class="card-header" style="background: #e2cfaa;">
+                <h2>🎓 YAZILIYA HAZIRLIK – BİLGE NOTLAR & PRATİK TAKTİKLER</h2>
+                <div class="soru-count">⭐ FULL TEKRAR</div>
+            </div>
+            <div class="card-body">
+                <div class="info-section" style="background: #fff5e6;">
+                    <h3>📝 Kurucu Yafeş Gümüş'ten Başarı Stratejisi</h3>
+                    <p><strong>🔑 SENARYO 3 kapsamında toplam 7 soru geliyor (2+2+2+1).</strong> Aşağıdaki ipuçlarıyla yüksek not garantisine bir adım daha yaklaş!</p>
+                    <ul>
+                        <li>✨ Malazgirt Savaşı (1071) ve Haçlı Seferleri’nin Anadolu’nun İslamlaşmasına etkisini kronolojik olarak ezberle. <strong>“Anadolu’nun kapıları”</strong> ifadesi anahtar kelimedir.</li>
+                        <li>✨ Yönetim kararlarında etkili unsurları (kamuoyu, hukuk, STK, ekonomi, bilim) günlük olaylarla ilişkilendir. Örnek: Okul kantin fiyatlarına karar verirken öğrenci konseyi etkisi.</li>
+                        <li>✨ Temel hak ve sorumlulukları listeleyip her birine birer örnek ver. Eğitim hakkı, sağlık hakkı ve vergi verme sorumluluğu mutlaka bilinmeli.</li>
+                        <li>✨ Dijital vatandaşlık konusunda e-Devlet, KVKK, siber zorbalık kavramlarını öğren. Teknolojinin haklarımızı kolaylaştırdığı gibi riskler de taşıdığını söyleyebilmelisin.</li>
+                    </ul>
+                    <div class="highlight">🏅 6-C SINIFI MOTTOSU: “Bilgiyle donan, sorumlulukla büyü, dijital çağda hakkını koru!” – Yafeş Gümüş</div>
+                    <div class="button-tip">✏️ ÇALIŞMA TAVSİYESİ: Her konuyu 5 dakikalık zihinden tekrar et, kendi cümlelerinle not al. Akıllı tahtaya dokunarak bu sayfayı aç, arkadaşlarınla tartış!</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ÖRNEK SORU BÖLÜMÜ (Sınav Tarzı) -->
+        <div class="topic-card" style="border-left: 8px solid #f7b32b;">
+            <div class="card-header" style="background: #e7cf9c;">
+                <h2>📋 ÖRNEK SORULAR – SENARYO 3 TARZI</h2>
+                <div class="soru-count">✍️ KENDİNİ DENE</div>
+            </div>
+            <div class="card-body">
+                <div class="info-section">
+                    <h3>🔎 Açık Uçlu ve Yorumlama Soruları</h3>
+                    <p><strong>1. (SB.6.3.4) </strong> Malazgirt Savaşı’nın sonuçlarından iki tanesini yazınız ve Anadolu’nun İslamlaşma sürecine nasıl katkı sağladığını açıklayınız.</p>
+                    <p><strong>2. (SB.6.4.1) </strong> Bir okul müdürü, okulda kıyafet serbestisi konusunda karar alırken hangi unsurlardan etkilenir? Üç unsur yazıp açıklayınız.</p>
+                    <p><strong>3. (SB.6.4.2) </strong> “Toplumda herkes sadece haklarını bilse, sorumluluklarını yerine getirmese ne gibi sorunlar oluşur?” Örnek vererek açıklayınız.</p>
+                    <p><strong>4. (SB.6.4.3) </strong> Dijitalleşme, vatandaşlık haklarımızı kullanmayı kolaylaştıran iki örnek ve zorlaştıran bir risk yazınız.</p>
+                    <div class="highlight">📢 CEVAP ANAHTARI İÇİN: Yukarıdaki konu başlıklarındaki bilgileri kullanarak kendi cevaplarını kontrol et! Tüm detaylar sayfada mevcut.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- YAPAY ZEKA SORU ÜRETİCİ (API'siz, butonlu, kısa) -->
+<div class="topic-card" style="background: linear-gradient(135deg, #1e2a3a, #0f1a24); border: 2px solid #f7b32b;">
+    <div class="card-header" style="background: #00000066; backdrop-filter: blur(10px);">
+        <h2 style="color: #f7b32b;">🤖 YAPAY ZEKA SORU BANKASI</h2>
+        <div class="soru-count">🎲 TEK TIKLA SORU</div>
+    </div>
+    <div class="card-body">
+        <div class="info-section" style="background: #1e2f2ae6; color: #fef2dd;">
+            <h3 style="color: #f7d44a;">🧠 SENARYO 3 - AKILLI SORU ÜRETİCİ</h3>
+            <p style="font-size: 1.2rem; margin-bottom: 20px;">Aşağıdaki butona tıkla, yapay zeka sana rastgele bir sınav sorusu göndersin! 💡</p>
+            
+            <div style="display: flex; justify-content: center; margin: 20px 0;">
+                <button id="zekaSoruButonu" style="background: #f7b32b; border: none; font-size: 1.8rem; padding: 18px 40px; border-radius: 60px; font-weight: bold; color: #1e3c2c; cursor: pointer; box-shadow: 0 8px 0 #9b6a1a; transition: 0.05s linear; width: 100%; max-width: 320px;">🎲 YAPAY ZEKA SORU GETİR 🎲</button>
+            </div>
+            
+            <div id="yapayZekaCikti" style="background: #00000055; border-radius: 40px; padding: 25px; margin-top: 15px; border-left: 8px solid #f7b32b; font-size: 1.2rem; min-height: 140px;">
+                ✨ <strong>Hazır mısın?</strong> Butona bas, yapay zeka sana özel bir soru üretsin!
+            </div>
+            <div class="button-tip" style="background: #2c4b38; color:#f7e6c4; margin-top: 20px;">⭐ Her tıklamada farklı soru gelir. Sınav provası yap!</div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // YAPAY ZEKA SORU HAVUZU (SENARYO 3 TAM UYUMLU)
+    const soruHavuzu = [
+        "📜 <strong>SB.6.3.4</strong> - Malazgirt Savaşı’nın (1071) Anadolu’nun İslamlaşmasına etkisini 3 madde ile açıklayınız.",
+        "⚔️ <strong>SB.6.3.4</strong> - Haçlı Seferleri’nin Anadolu’daki Türk-İslam varlığına nasıl bir etkisi olmuştur? Olumlu ve olumsuz yönleriyle yazınız.",
+        "🏛️ <strong>SB.6.4.1</strong> - Yönetimin karar alma sürecini etkileyen 4 farklı unsuru örnek vererek açıklayınız.",
+        "📢 <strong>SB.6.4.1</strong> - Sivil toplum kuruluşlarının (STK) bir şehrin çevre politikalarını belirlemedeki rolünü anlatan bir örnek olay kurgulayınız.",
+        "🕊️ <strong>SB.6.4.2</strong> - 'Haklarımı bilirim ama sorumluluklarımı yerine getirmek zorunda değilim.' diyen bir kişi toplumda ne gibi sorunlara yol açar? Açıklayınız.",
+        "📚 <strong>SB.6.4.2</strong> - Eğitim hakkı ile ailelerin çocuklarını okula gönderme sorumluluğu arasındaki ilişkiyi açıklayınız.",
+        "💻 <strong>SB.6.4.3</strong> - e-Devlet uygulamaları vatandaşlık haklarımızın kullanımını nasıl kolaylaştırmıştır? İki örnek veriniz.",
+        "🔐 <strong>SB.6.4.3</strong> - Dijital ortamda kişisel verilerin korunması (KVKK) neden önemlidir? Mahremiyet hakkı açısından değerlendiriniz.",
+        "🏹 <strong>KARMA</strong> - Anadolu Selçuklu Devleti döneminde İslam medeniyetinin gelişmesine katkı sağlayan iki eser veya kurum adı yazınız ve görevlerini açıklayınız.",
+        "⚖️ <strong>SB.6.4.1 + 4.2</strong> - Yerel yönetimlerin bir karar alırken halkın taleplerini dikkate alması hangi demokratik ilkeye örnektir? Sorumluluk bilinci ile ilişkilendiriniz."
+    ];
+    
+    // Buton ve çıktı elementi
+    const buton = document.getElementById('zekaSoruButonu');
+    const ciktiAlani = document.getElementById('yapayZekaCikti');
+    
+    // Rastgele soru getirme fonksiyonu
+    function rastgeleSoruUret() {
+        const rastgeleIndex = Math.floor(Math.random() * soruHavuzu.length);
+        const secilenSoru = soruHavuzu[rastgeleIndex];
+        // Yapay zeka hissi için küçük bir animasyon ve tarih damgası (opsiyonel)
+        ciktiAlani.style.opacity = '0';
+        setTimeout(() => {
+            ciktiAlani.innerHTML = `
+                <div style="display: flex; gap: 12px; align-items: flex-start;">
+                    <span style="font-size: 2rem;">🧠💬</span>
+                    <div>
+                        <strong style="color: #f7b32b;">🤖 Yapay Zeka Sordu:</strong><br>
+                        ${secilenSoru}
+                        <hr style="margin: 12px 0; border-color:#f7b32b55;">
+                        <span style="font-size:0.85rem;">✨ <em>Bu soru senaryo 3 kazanımlarına %100 uyumludur. Cevabını sözlü olarak arkadaşlarına anlat veya defterine yaz!</em></span>
+                    </div>
+                </div>
+            `;
+            ciktiAlani.style.opacity = '1';
+        }, 80);
+    }
+    
+    // Butona tıklandığında
+    buton.addEventListener('click', rastgeleSoruUret);
+    
+    // Dokunmatik / mobil uyum için ekstra güçlendirme
+    buton.addEventListener('touchstart', function(e) {
+        e.preventDefault();
+        rastgeleSoruUret();
+    });
+</script>
+    <footer>
+        <p>📚 6. Sınıf Sosyal Bilgiler - 2. Dönem 1. Ortak Yazılı | Senaryo 3 | Kurucu Yafes Gümüş liderliğinde 6-C sınıfının tam başarısı için hazırlanmıştır. 🇹🇷</p>
+        <p style="margin-top: 8px;">✨ Akıllı tahta / dokunmatik ekran uyumlu | Tüm içerik MEB kazanımlarına uygun, bilgi yoğun ve özet niteliğindedir ✨</p>
+    </footer>
+</div>
+</body>
+</html>
