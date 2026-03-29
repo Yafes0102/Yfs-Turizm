@@ -61,17 +61,20 @@ async function aiSoruSor() {
         const t2 = "JfPVutLzKzdEe";
         const t3 = "opnnASGTFpJPfm";
 
-        const resp = await fetch(proxy + encodeURIComponent(api), {
+const resp = await fetch(proxy + encodeURIComponent(api), {
             method: "POST",
             headers: { 
                 "Authorization": "Bearer " + t1 + t2 + t3,
                 "Content-Type": "application/json" 
             },
             body: JSON.stringify({ 
-                inputs: "Sen bir Sosyal Bilgiler öğretmenisin. 6. sınıf öğrencisine Türkçe ve kısa cevap ver: " + soru 
+                inputs: "Sen Sosyal Bilgiler öğretmenisin. 6. sınıf düzeyinde Türkçe cevap ver: " + soru,
+                parameters: { 
+                    "wait_for_model": true, // Model uykudaysa uyandırana kadar bekletir
+                    "max_new_tokens": 250   // Cevabın kesilmesini önler
+                }
             })
         });
-
         const data = await resp.json();
 
         if (data[0] && data[0].generated_text) {
