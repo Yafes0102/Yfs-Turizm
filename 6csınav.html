@@ -319,17 +319,6 @@
                 </div>
             </div>
         </div>
-<div id="ai-container" style="border:3px solid #27ae60; border-radius:15px; background:white; padding:15px; margin:20px auto; max-width:500px; font-family:sans-serif;">
-    <h3 style="color:#2c3e50; text-align:center; margin-top:0;">🤖 6-C Sınav Asistanı</h3>
-    <div id="chat-window" style="height:250px; overflow-y:auto; border:1px solid #ddd; padding:10px; margin-bottom:10px; background:#f9f9f9; display:flex; flex-direction:column; gap:8px;">
-        <p style="background:#e1f5fe; padding:8px; border-radius:10px; margin:0; font-size:14px; align-self:flex-start;">Selam 6-C! Sosyal Bilgiler sınavı için bir soru sor, hemen cevaplayayım.</p>
-    </div>
-    <div style="display:flex; gap:5px;">
-        <input type="text" id="ai-input" style="flex:1; padding:12px; border:1px solid #ccc; border-radius:5px;" placeholder="Sorunu buraya yaz...">
-        <button onclick="aiSoruSor()" id="ai-btn" style="background:#27ae60; color:white; border:none; padding:10px 15px; cursor:pointer; border-radius:5px; font-weight:bold;">SOR</button>
-    </div>
-</div>
-
 <script>
 async function aiSoruSor() {
     const input = document.getElementById('ai-input');
@@ -339,7 +328,7 @@ async function aiSoruSor() {
 
     if(!soru) return;
 
-    // 1. Kullanıcı mesajını ekrana bas
+    // Kullanıcı mesajını ekrana bas
     windowChat.innerHTML += `<p style="background:#dcf8c6; padding:8px; border-radius:10px; align-self:flex-end; margin:0; font-size:14px;">${soru}</p>`;
     input.value = "";
     btn.disabled = true;
@@ -347,11 +336,14 @@ async function aiSoruSor() {
     windowChat.scrollTop = windowChat.scrollHeight;
 
     try {
-        // BURASI FETCH BAŞLANGICI
-        const resp = await fetch("https://api-inference.huggingface.co/models/meta-llama/Llama-3.1-8B-Instruct", {
+        // GitHub'daki engeli aşmak için aracı (Proxy) kullanıyoruz
+        const proxyUrl = "https://corsproxy.io/?";
+        const apiUrl = "https://api-inference.huggingface.co/models/meta-llama/Llama-3.1-8B-Instruct";
+        
+        const resp = await fetch(proxyUrl + encodeURIComponent(apiUrl), {
             method: "POST",
             headers: { 
-                "Authorization": ["Bea", "rer ", "hf_", "KBkKzexJfPVutLzKzdEeopnnASGTFpJPfm"].join(""), 
+                "Authorization": "Bearer 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",
                 "Content-Type": "application/json" 
             },
             body: JSON.stringify({ 
@@ -365,13 +357,14 @@ async function aiSoruSor() {
             windowChat.innerHTML += `<p style="background:#fff3e0; padding:8px; border-radius:10px; font-size:14px;">⚠️ Zekam yükleniyor, 10 saniye sonra tekrar sor kanka!</p>`;
         } else if (data[0] && data[0].generated_text) {
             let cevap = data[0].generated_text;
+            // Soruyu temizle sadece cevabı göster
             let temizCevap = cevap.split("ver:")[1] || cevap;
             windowChat.innerHTML += `<p style="background:#e1f5fe; padding:8px; border-radius:10px; align-self:flex-start; margin:0; font-size:14px;">${temizCevap.trim()}</p>`;
         } else {
             windowChat.innerHTML += `<p style="background:#ffcdd2; padding:8px; border-radius:10px; font-size:14px;">❌ Bir hata oldu, tekrar dene.</p>`;
         }
     } catch(e) {
-        windowChat.innerHTML += `<p style="color:red; font-size:12px;">Bağlantı Hatası: Tarayıcın engelliyor olabilir.</p>`;
+        windowChat.innerHTML += `<p style="color:red; font-size:12px;">Hata: Bağlantı kurulamadı. Lütfen 10 sn sonra tekrar dene.</p>`;
     }
 
     btn.disabled = false;
